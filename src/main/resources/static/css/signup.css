@@ -1,0 +1,64 @@
+.signup-body{
+    width: 768px; height: 100%;
+    margin: 0 auto;
+}
+
+.signup-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100; height: 124px;  
+    padding: 50px 0 50px;
+} 
+.signup-header img{
+    width: 150px; height: 150px;
+}
+.signup-ip-box{
+    margin: 0 auto;
+    width: 460px; height: 100%;
+}
+.signup-info{
+    font-size: 15px;
+    font-weight: 900;
+    margin: 19px 0 8px;
+}
+.signup-ip{
+    width: 100%; height: 51px;
+    padding: 10px 110px 10px 14px;
+    border: 1px solid #c7c7c7;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+}
+.signup-ip input{
+    width: 334px; height: 29px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.signup-info span{
+    color: #8e8e8e;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.signup-btn{
+    width: 100%; height: 60px;
+    padding: 17px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+    background-color: #006633;
+    color: white;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.signup-btn:hover{
+    background-color: #397959;
+}
+.signup-ip-msg{
+    display: none;
+    font-size: 14px;
+    color: red;
+}

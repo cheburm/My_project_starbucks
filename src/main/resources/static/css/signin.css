@@ -1,0 +1,95 @@
+.starbucks-header{
+    display: flex;
+    justify-content: center;
+    width: 100; height: 232px;
+    padding-bottom: 69px;   
+}
+.signin-content{
+    width: 551px; height: 100%;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+    border: 1px solid #b1b1b1;
+    border-radius: 10px;
+}
+.signin-ip{
+    height: 60px;
+    padding: 17px 18px 17px 19px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.signin-id{
+    font-size: 20px;
+    width: 100%; height: 24px;
+    cursor: pointer;
+}
+.singin-password{
+    font-size: 20px;
+    width: 100%; height: 24px;
+    cursor: pointer;
+    
+}
+.signin-id::placeholder{
+    font-size: 20px;
+}
+.singin-password::placeholder{
+    font-size: 20px;
+    
+}
+.cookie-checkbox{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    color: #777777;
+}
+.cookie-checkbox input{
+    width: 20px; height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.signin-btn{
+    width: 100%; height: 60px;
+    padding: 17px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+    background-color: #006633;
+    color: white;
+    border-radius: 5px;
+}
+.signin-btn:hover{
+    background-color: #397959;
+}
+.oauth-login-naver{
+    width: 100%; height: 60px;
+    padding: 17px 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 900;
+    background-color: #03c75a;
+    color: white;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.oauth-login-naver:hover{
+    background-color: #4bca84;
+}
+.oauth-login-naver img{
+    width: 50px; height: 50px;
+}
+.signup-page{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+.signup-page a:hover{
+	text-decoration: underline;
+}
+.signup-page a{
+    color: #888888;
+}

@@ -1,0 +1,215 @@
+.main-content{
+    width: 100%; height: 100%;
+}
+.event-banner-box{
+    width: 100%; height: 640px;
+}
+.main-content img{
+    width: 100%; height: 100%;
+}
+.event-banner{
+    width: 1280px; height: 640px;
+    position: absolute;
+    top: 217.5px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* -------------------------------- */
+
+.product-box{
+    width: 100%; height: 100%;
+    margin: 114px 0;
+}
+.product{
+    width: 1280px; height: 530px;
+    margin: 0 auto;
+}
+.product-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 102px;
+    padding-bottom: 54px;
+    font-size: 32px;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+
+.life-product-list{
+    display: flex;
+}
+.life-product-list a{
+    height: 428px;
+    padding: 0 14px 0;
+}
+
+.life-product-list a img{
+    width: 100%; height: 390px;
+}
+.life-product-list a p{
+    width: 100%; height: 18px;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+/* ------------------------------------- */
+
+.best-product-list{
+    display: flex;
+}
+
+.best-product{
+    width: 100%; height: 100%;
+    padding: 0 14px 50px;
+}
+.best-product-img img{
+    width: 299px; height: 299px;
+    margin-bottom: 20px;
+}
+.best-product:first-child{
+    padding-left: 0;
+}
+.best-product:last-child{
+    padding-right: 0;
+}
+
+.product-price{
+    font-size: 13px;
+    font-weight: 900;
+}
+.product-name{
+    height: 18px;
+    font-size: 12px;
+    font-weight: 900;
+    margin-top: 4px;
+}
+.product-score{
+    height: 13px;
+    font-size: 11px;
+    color: #aaaaaa;
+}
+.brand-name{
+    height: 13px;
+    font-size: 11px;
+    margin-top: 16px;
+}
+.sold-out{
+    margin-top: 21px;
+}
+.sold-out p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px; height: 21px;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 10px;
+    font-weight: 900;
+    background-color: #535967;
+    color: white;
+}
+/* ------------------------------------------- */
+.stabucks-like{
+    width: 100%; height: 435px;
+}
+.stabucks-like img{
+    width: 100%; height: 100%;
+}
+
+/* --------------------------------------- */
+.all-products{
+    width: 1310px; height: 530px;
+    margin: 0 auto;
+}
+.all-product-text{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%; height: 102px;
+    padding: 0 15px 54px;
+    box-sizing: border-box;
+}
+.all-product-text span{
+    font-size: 32px;
+    font-weight: 900;
+    padding-right: 130px;
+}
+.list-deployment{
+    display: flex;
+}
+.list-deployment button{
+    height: 100%;
+    font-size: 13px;
+    color: #888888;
+    margin-left: 23px;
+}
+
+.all-product-list{
+    width: 1310px; height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all-product{
+    width: 262px; height: 434px;
+    padding: 0 15px 50px;
+    box-sizing: border-box;
+}
+.all-product-img img{
+    width: 232px; height: 232px;
+    margin-bottom: 20px;
+}
+/* ----------------------- */
+.discount-banner{
+    width: 100%; height: 350px;
+    background-color: #1e3932;
+}
+.dicount-box{
+    display: flex;
+    width: 1280px; height: 100%;
+    padding: 80px 0 50px 86px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.discount-img{
+    width: 377px; height: 100%;
+}
+.discount-img img{
+    width: 327px; height: 190px;
+}
+.dicount-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; height: 190px;
+    margin-left: 70px;
+}
+.dicount-text div{
+    width: 100%; height: 50px;
+    font-size: 32px;
+    color: white;
+    font-weight: 900;
+}
+.dicount-text p{
+    width: 100%; height: 18px;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #aaaaaa;
+    font-weight: 700;
+}
+.dicount-text a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 302px; height: 52px;
+    margin-top: 16px;
+    font-size: 14px;
+    color: white;
+    font-weight: 900;
+    border: 1px solid #aaaaaa;
+}
