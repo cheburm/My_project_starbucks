@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/signin.css">
     <link rel="stylesheet" href="/css/reset.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>로그인 페이지</title>
 </head>
 
@@ -31,7 +32,7 @@
                 <input type="checkbox">
                 로그인 상태 유지
             </div>
-            <button class="signin-btn">로그인</button>
+            <button type="submit" class="signin-btn">로그인</button>
             <button class="oauth-login-naver">NAVER 로그인
             </button>
             <div class="signup-page">
@@ -41,6 +42,6 @@
             </div>
         </div>
     </div>
+    <script src="/js/signin.js"></script>
 </body>
-
 </html>

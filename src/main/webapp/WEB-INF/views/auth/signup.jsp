@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/signup.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <title>회원가입</title>
 </head>
 <body>
@@ -17,11 +18,11 @@
             <div class="signup-header">
                 <img src="/coffeImg/stabuck-logo.jpg" alt="">
             </div>
-            <div class="signup-ip-box">
+            <form class="signup-ip-box" action="/auth/sign_up" method="post">
                 <div class="ip-box">
                     <h3 class="signup-info">아이디</h3>
                     <div class="signup-ip">
-                        <input type="text">
+                        <input type="text" name="username">
                     </div>
                     <span class="signup-ip-msg">
                     </span>
@@ -29,7 +30,7 @@
                 <div class="ip-box">
                     <h3 class="signup-info">비밀번호</h3>
                     <div class="signup-ip">
-                        <input type="password">
+                        <input type="password" name="password">
                     </div>
                     <span class="signup-ip-msg">
                     </span>
@@ -45,17 +46,17 @@
                 <div class="ip-box">
                     <h3 class="signup-info">이름</h3>
                     <div class="signup-ip">
-                        <input type="text">
+                        <input type="text" name="name">
                     </div>
                     <span class="signup-ip-msg">
                     </span>
                 </div>
                 <h3 class="signup-info">본인 확인 이메일<span>(선택)</span></h3>
                 <div class="signup-ip">
-                    <input type="text">
+                    <input type="email" name="email">
                 </div>
-                <button class="signup-btn">가입하기</button>
-            </div>
+                <button type="button" class="signup-btn">가입하기</button>
+            </form>
         </div>
     </div>
     <script src="/js/signup.js"></script>
