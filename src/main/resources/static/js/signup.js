@@ -4,14 +4,26 @@ const signupBtn = document.querySelector('.signup-btn');
 const Form = document.querySelector('form');
 
 var idCheckFleg = 0;
+var usernameInputCheck = false;
+var passwordUnputCheck = false;
+var rePasswordInputCheck = false;
+var nameInputCheck = false;
 
 
 signupBtn.onclick = () => {
-	if (idCheckFleg == 4) {
-		Form.submit();
-	 alert('s');
+		if(usernameInputCheck != true){
+			return;
+		} else if(passwordUnputCheck != true){
+			return;
+		} else if(rePasswordInputCheck != true){
+			return;
+		} else if(nameInputCheck != true){
+			return;
+		} else {
+			Form.submit();
+			alert('회원가입을 완료했습니다. 다시 로그인해주세요.')
+		}
 	}
-}
 
 
 for (let i = 0; i < signup_Ip.length - 1; i++) {
@@ -44,7 +56,7 @@ function usernameCheck(){
 				signupIpMsg[0].textContent = '이미 사용중인 아이디 입니다.';
 			}else {
 				signupIpMsg[0].textContent = '사용 가능한 아이디 입니다.';
-				++idCheckFleg;
+				usernameInputCheck = true;
 			}
 		},
 		error: function(){
@@ -61,8 +73,14 @@ signup_Ip[1].onblur = () => {
 	} else if (signup_Ip[1].value.length != 0 && !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/.test(signup_Ip[1].value)) {
 		signupIpMsg[1].textContent = '8~16자 영문 소문자, 숫자, 특수문자를 사용하세요.';
 	} else {
-		++idCheckFleg;
+		passwordUnputCheck = true;
 		signupIpMsg[1].textContent = '사용 가능한 비밀번호 입니다.';
+	}
+}
+signup_Ip[1].onkeydown = () => {
+	rePasswordInputCheck = false;
+	if(signup_Ip[2].value.length != 0){
+		signupIpMsg[2].textContent = '';
 	}
 }
 
@@ -77,7 +95,7 @@ signup_Ip[2].onblur = () => {
 		signupIpMsg[2].textContent = '비밀번호가 일치하지 않습니다.';
 	} else {
 		signupIpMsg[2].textContent = '비밀번호가 일치합니다.';
-		++idCheckFleg;
+		rePasswordInputCheck = true;
 	}
 }
 
@@ -90,7 +108,7 @@ signup_Ip[3].onblur = () => {
 		signupIpMsg[3].textContent = '한글과 영문 대 소문자를 사용하세요. (특수기호, 공백 사용 불가)';
 	} else {
 		signupIpMsg[3].style.display = 'none';
-		++idCheckFleg;
+		nameInputCheck = true;
 	}
 }
 

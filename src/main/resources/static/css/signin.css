@@ -66,6 +66,7 @@
 .oauth-login-naver{
     width: 100%; height: 60px;
     padding: 17px 0 15px;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,4 +93,9 @@
 }
 .signup-page a{
     color: #888888;
+}
+.signin-ip-msg{
+    display: none;
+    font-size: 14px;
+    color: red;
 }

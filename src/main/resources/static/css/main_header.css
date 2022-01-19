@@ -1,161 +1,229 @@
-
-.main-header{
-    width: 100%; height: 217px;
-    border-bottom: 1px solid #e1e1e1;
+.main-header {
+	width: 100%;
+	height: 217px;
+	border-bottom: 1px solid #e1e1e1;
 }
 
-.header-main{
-    margin: 0 auto;
-    width: 1280px; height: 100%;
+.header-main {
+	margin: 0 auto;
+	width: 1280px;
+	height: 100%;
 }
 
-/* 헤더 상단 */
-.header-top-box{
-    width: 100%; height: 37px;
-    border-bottom: 1px solid #e1e1e1;
-}
-.header-top{
-    width: 1280px; height: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-}
-.header-mid{
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    width: 100%; height: 108px;
-    padding: 50px 0 20px;
-}
-.naver-box{
-    margin-top: 5px;
-}
-.naver-logo{
-    width: 46px; height: 8px;
-    font-size: 13px;
-    color: #888888;
-    font-weight: 900;
-}
-.naver-shop{
-    margin-left: 18px;
-    font-size: 13px;
-    color: #888888;
-}
-.signin{
-    color: #4f4f4f;
-    padding: 2px 5px;
-    border: 1px solid #d3d3d3;
-    font-size: 12px;
-}
-.header-menu{
-    color: #888888;
-    padding: 7px 9px 5px;
-    font-size: 20px;
-}
-/* 헤더 중단 찜하기 */
-.page-like{
-    height: 34px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1e3932;
-    color: #ffffff;
-    padding: 0 17px;
-    border-radius: 17px;
-}
-.page-like p{
-    margin-left: 5px;
-}
-.page-like span{
-    margin-left: 3px;
+/* �뿤�뜑 �긽�떒 */
+.header-top-box {
+	width: 100%;
+	height: 37px;
+	border-bottom: 1px solid #e1e1e1;
 }
 
-/* 헤더 로고 */
-.logo{
-    zoom: 0.45;
+.header-top {
+	width: 1280px;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
 }
 
-/* 헤더 검색 */
-.header-search{
-    display: flex;
-    width: 218px; height: 100%;
-    padding: 2px 40px 0 20px;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    border-radius: 18px;
-    border: 1px solid rgb(179, 179, 179);
-}
-.header-search input{
-    outline: none;
-}
-.header-search input::placeholder{
-    color: #afafaf;
-    outline: none;
-}
-.header-search i{
-    font-size: 16px;
-    cursor: pointer;
+.header-mid {
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	width: 100%;
+	height: 108px;
+	padding: 50px 0 20px;
 }
 
-/* 헤더 하단 */
-.header-bot{
-    width: 100%; height: 71px;
-    display: flex;
-    justify-content: space-between;
-}
-.header-nav{
-    display: flex;
-    border: 17px 92px 17px 0;
-}
-.header-nav li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0 23px 0 22px;
-    padding: 0 23px 0 22px;
-}
-.header-nav li a,button{
-    font-size: 14px;
-    color: #444444;
-}
-.header-nav li:hover{
-    color: #1e3932;
-    font-weight: 900;
-    cursor: pointer;
-}
-.header-bot button{
-    font-size: 14px;
+.naver-box {
+	margin-top: 5px;
 }
 
-.recommend-list-btn{
-    position: relative;
+.naver-logo {
+	width: 46px;
+	height: 8px;
+	font-size: 13px;
+	color: #888888;
+	font-weight: 900;
 }
-.recommend-list{
-    display: none;
-    position: absolute;
-    width: 150px; height: auto;
-    padding: 8px 0;
-    box-sizing: border-box;
-    position: absolute;
-    border: 1px solid #e1e1e1;
-    background-color: white;
-    z-index: 1;
-    top: 55px;
+
+.naver-shop {
+	margin-left: 18px;
+	font-size: 13px;
+	color: #888888;
 }
-.recommend-list a{
-    height: 32px;
-    padding: 0 30px 0 13px;
-    font-size: 14px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: #444444;
-    font-weight: 400;
+
+.log-in-out {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.recommend-list a:hover{
-    font-weight: 900;
-    background-color: #c9c9c9;
+
+.signin-btn {
+	color: #4f4f4f;
+	padding: 2px 5px;
+	border: 1px solid #d3d3d3;
+	font-size: 12px;
 }
+
+.signout-btn {
+	color: #4f4f4f;
+	padding: 2px 5px;
+	border: 1px solid #d3d3d3;
+	font-size: 12px;
+}
+
+.user-another-nav-btn {
+	position: relative;
+	margin-left: 15px;
+}
+
+.user-another-nav {
+	display: none;
+	width: 120px;
+	padding: 10px 20px 10px 10px;
+	position: absolute;
+	background-color: white;
+	border: 1px solid #d3d3d3;
+	z-index: 1;
+	right: -20px;
+	top: 23px;
+}
+
+.user-another-nav a {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin-bottom: 3px;
+}
+
+.user-another-nav a:hover {
+	text-decoration: underline;
+}
+
+.user-another-nav a i {
+	padding-left: 5px;
+}
+/* �뿤�뜑 以묐떒 李쒗븯湲� */
+.page-like {
+	height: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #1e3932;
+	color: #ffffff;
+	padding: 0 17px;
+	border-radius: 17px;
+}
+
+.page-like p {
+	margin-left: 5px;
+}
+
+.page-like span {
+	margin-left: 3px;
+}
+
+/* �뿤�뜑 濡쒓퀬 */
+.logo {
+	zoom: 0.45;
+}
+
+/* �뿤�뜑 寃��깋 */
+.header-search {
+	display: flex;
+	width: 218px;
+	height: 100%;
+	padding: 2px 40px 0 20px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	border-radius: 18px;
+	border: 1px solid rgb(179, 179, 179);
+}
+
+.header-search input {
+	outline: none;
+}
+
+.header-search input::placeholder {
+	color: #afafaf;
+	outline: none;
+}
+
+.header-search i {
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* �뿤�뜑 �븯�떒 */
+.header-bot {
+	width: 100%;
+	height: 71px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-nav {
+	display: flex;
+	border: 17px 92px 17px 0;
+}
+
+.header-nav li {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0 23px 0 22px;
+	padding: 0 23px 0 22px;
+}
+
+.header-nav li a, button {
+	font-size: 14px;
+	color: #444444;
+}
+
+.header-nav li:hover {
+	color: #1e3932;
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.header-bot button {
+	font-size: 14px;
+}
+
+.recommend-list-btn {
+	position: relative;
+}
+
+.recommend-list {
+	display: none;
+	position: absolute;
+	width: 150px;
+	height: auto;
+	padding: 8px 0;
+	box-sizing: border-box;
+	position: absolute;
+	border: 1px solid #e1e1e1;
+	background-color: white;
+	z-index: 1;
+	top: 55px;
+}
+
+.recommend-list a {
+	height: 32px;
+	padding: 0 30px 0 13px;
+	font-size: 14px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: #444444;
+	font-weight: 400;
+}
+
+.recommend-list a:hover {
+	font-weight: 900;
+	background-color: #c9c9c9;
+}
+
 .recommend-list-btn:hover .recommend-list {
-    display: block;
+	display: block;
 }

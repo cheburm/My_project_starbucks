@@ -14,19 +14,40 @@
 			username = #{username}
 	</select>
 
-	<insert id="signup" parameterType="com.springboot.starbucks.domain.user.User">
+	<insert id="insertUser" parameterType="com.springboot.starbucks.domain.user.User">
 		insert into
 			user_mst
 		values(
 			0,
 			#{username},
+			#{oauth2_username},
 			#{password},
 			#{name},
 			#{email},
+			#{provider},
+			#{role},
 			now(),
 			now()
 		);
 	</insert>
+	
+	<select id="getUserByUsername" resultType="com.springboot.starbucks.domain.user.User">
+		select
+			*
+		from
+			user_mst
+		where
+			username = #{username};
+	</select>
+	
+	<select id="getUserByOAuth2Username" resultType="com.springboot.starbucks.domain.user.User" parameterType="String">
+		select
+			*
+		from
+			user_mst
+		where
+			oauth2_username = #{oauth2_username};
+	</select>
 
 
 </mapper>

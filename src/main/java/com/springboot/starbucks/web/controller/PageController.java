@@ -20,4 +20,5 @@ public class PageController {
 	public String signupPage() {
 		return "auth/signup";
 	}
+	
 }
