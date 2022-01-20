@@ -67,8 +67,8 @@
 				</div>
 				<div class="header-bot">
 					<ul class="header-nav">
-						<li><a class="category" href="/category?productCategoryName=tumbler">텀블러</a></li>
-						<li><a class="category" href="/category/coldCup">콜드컵</a></li>
+						<li><a class="category">텀블러</a></li>
+						<li><a class="category">콜드컵</a></li>
 						<li><a class="category">보온병</a></li>
 						<li><a class="category">워터보틀</a></li>
 						<li><a class="category">머그,컵</a></li>
@@ -78,10 +78,10 @@
 						<li class="recommend-list-btn"><a href="">추천상품 <i
 								class="fas fa-chevron-down"></i></a>
 							<ul class="recommend-list">
-								<a href="/products/product_list">22 new year</a>
-								<a href="/products/product_list">home</a>
-								<a href="/products/product_list">On-the-Go</a>
-								<a href="/products/product_list">Work</a>
+								<a href="/products/product_lists">22 new year</a>
+								<a href="/products/product_lists">home</a>
+								<a href="/products/product_lists">On-the-Go</a>
+								<a href="/products/product_lists">Work</a>
 							</ul></li>
 						<li><a href="" style="color: #888888;">묻고 답하기</a></li>
 						<li><a href="" style="color: #888888;">공지사항</a></li>

@@ -44,6 +44,9 @@
                         <li>평점높은순</li>
                     </ul>
                     <div class="product-view-info-num">
+                        <a href="../admin/admin_product_upload" class="admin-product-upload">
+                            상품등록
+                        </a>
                         <button class="free-shipping">
                             <span>무료배송</span>
                             <div class="switch-on-off">

@@ -5,25 +5,25 @@ const Form = document.querySelector('form');
 
 var idCheckFleg = 0;
 var usernameInputCheck = false;
-var passwordUnputCheck = false;
-var rePasswordInputCheck = false;
+var passwordInputCheck = false;
+var	rePasswordInputCheck = false;
 var nameInputCheck = false;
 
 
 signupBtn.onclick = () => {
-		if(usernameInputCheck != true){
-			return;
-		} else if(passwordUnputCheck != true){
-			return;
-		} else if(rePasswordInputCheck != true){
-			return;
-		} else if(nameInputCheck != true){
-			return;
-		} else {
-			Form.submit();
-			alert('회원가입을 완료했습니다. 다시 로그인해주세요.')
-		}
+	if (usernameInputCheck != true) {
+		return;
+	} else if (passwordInputCheck != true) {
+		return;
+	} else if (rePasswordInputCheck != true) {
+		return;
+	} else if (nameInputCheck != true) {
+		return;
+	} else {
+		Form.submit();
+		alert('회원가입을 완료했습니다. 다시 로그인해주세요.')
 	}
+}
 
 
 for (let i = 0; i < signup_Ip.length - 1; i++) {
@@ -34,7 +34,7 @@ for (let i = 0; i < signup_Ip.length - 1; i++) {
 
 // 아이디 정규식
 signup_Ip[0].onblur = () => {
-	
+
 	signupIpMsg[0].style.display = 'block';
 	if (signup_Ip[0].value.length == 0) {
 		signupIpMsg[0].textContent = '필수 정보 입니다.';
@@ -44,23 +44,24 @@ signup_Ip[0].onblur = () => {
 		usernameCheck();
 	}
 }
-function usernameCheck(){
-	
+function usernameCheck() {
+
 	$.ajax({
 		type: "get",
 		url: "/usernameCheck",
-		data: {"username": signup_Ip[0].value},
+		data: { "username": signup_Ip[0].value },
 		dataType: "text",
-		success: function(data){
-			if(data == 1){
+		success: function(data) {
+			if (data == 1) {
 				signupIpMsg[0].textContent = '이미 사용중인 아이디 입니다.';
-			}else {
+				usernameInputCheck = false;
+			} else {
 				signupIpMsg[0].textContent = '사용 가능한 아이디 입니다.';
 				usernameInputCheck = true;
 			}
 		},
-		error: function(){
-			alert('비동기 오류');	
+		error: function() {
+			alert('비동기 오류');
 		}
 	})
 }
@@ -73,19 +74,20 @@ signup_Ip[1].onblur = () => {
 	} else if (signup_Ip[1].value.length != 0 && !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/.test(signup_Ip[1].value)) {
 		signupIpMsg[1].textContent = '8~16자 영문 소문자, 숫자, 특수문자를 사용하세요.';
 	} else {
-		passwordUnputCheck = true;
+		passwordInputCheck = true;
 		signupIpMsg[1].textContent = '사용 가능한 비밀번호 입니다.';
 	}
 }
 signup_Ip[1].onkeydown = () => {
 	rePasswordInputCheck = false;
-	if(signup_Ip[2].value.length != 0){
+	if (signup_Ip[2].value.length != 0) {
 		signupIpMsg[2].textContent = '';
 	}
 }
 
 //비밀번호 재확인 정규식
 signup_Ip[2].onblur = () => {
+	rePasswordInputCheck = false;
 	signupIpMsg[2].style.display = 'block';
 	if (signup_Ip[2].value.length == 0) {
 		signupIpMsg[2].textContent = '필수 정보 입니다.';

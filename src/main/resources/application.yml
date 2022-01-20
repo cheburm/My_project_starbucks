@@ -39,10 +39,13 @@ spring:
             user-name-attribute: response
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:8001/starbucks?useUnicode=true
+    url: jdbc:mariadb://localhost:8001/starbucks?useUnicode=true&allowMultiQueries=true
     username: root
     password: toor
     
 mybatis:
   mapper-locations:
   - /mappers/*.xml
+  
+file:
+  path: D:/Project_Starbucks/ProjectStarbucks/image/

@@ -90,7 +90,7 @@
     height: 20px;
     margin-right: 11px;
 }
-/* 스위치 기능 */
+/* �뒪�쐞移� 湲곕뒫 */
 .switch-on-off{
     display: flex;
     justify-content: space-between;
@@ -248,3 +248,18 @@
      -webkit-transform: translateX(26px);
       -ms-transform: translateX(26px);
        transform: translateX(26px); }
+       
+/* 관리자 전용 페이지 */
+.admin-product-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    width: 100px; height: 100%;
+    padding: 5px 0 3px;
+    background-color: #006633;
+    border-radius: 5px;
+    color: white;
+    font-weight: 900;
+    border: 1px solid black;
+}

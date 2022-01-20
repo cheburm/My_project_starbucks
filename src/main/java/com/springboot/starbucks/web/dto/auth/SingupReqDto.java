@@ -22,6 +22,7 @@ public class SingupReqDto {
 				.password(new BCryptPasswordEncoder().encode(password))
 				.name(name)
 				.email(email)
+				.role("ROLE_USER")
 				.build();
 	}
 

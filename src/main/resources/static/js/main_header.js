@@ -6,7 +6,7 @@ for (let i = 0; i < productCategorys.length; i++) {
 
 	productCategorys[i].onclick = () => {
 
-		let productCategoryName = "";
+		let productCategoryName = '';
 		if (productCategorys == 0) {
 			productCategoryName = 'tumbler';
 		} else if (productCategorys == 1) {

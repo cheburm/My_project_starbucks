@@ -21,4 +21,14 @@ public class PageController {
 		return "auth/signup";
 	}
 	
+	@GetMapping("/admin/admin_product_upload")
+	public String adminPage() {
+		return "admin/admin_product_upload";
+	}
+
+	@GetMapping("/products/product_lists")
+	public String productCategory() {
+		return "/products/product_list";
+	}
+	
 }
