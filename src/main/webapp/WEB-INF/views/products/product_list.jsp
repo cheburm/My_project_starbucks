@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스타벅스</title>
-    <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/product_list.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,9 +18,9 @@
         <div class="product-list-container">
             <div class="product-nav">
                 <div class="product-info">
-                    <span class="product-kind-name">상품 종류</span>
+                    <span class="product-kind-name"></span>
                     <button class="product-kind-view" type="button">
-                        <span>상품종류</span>(총 <span>01</span>개)
+                        <span></span>(총 <span>01</span>개)
                         <i class="fas fa-sort-down"></i>
                         <ul class="product-kind-list">
                             <li>텀블러</li>

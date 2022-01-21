@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스타벅스</title>
     <link rel="stylesheet" href="/css/index.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -178,6 +179,7 @@
         </div>
         <jsp:include page="./include/main_footer.jsp"></jsp:include>
     </div>
+    <script src="/js/main_header.js"></script>
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
 </body>
 </html>

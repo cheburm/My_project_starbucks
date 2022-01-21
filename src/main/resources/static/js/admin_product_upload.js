@@ -33,6 +33,7 @@ productUpload.onclick = () => {
 		contentType: false,
 		success: function(data){
 			alert('상품 등록되었습니다.');
+			location.replace('/admin/admin_product_upload');
 		},
 		error: function(){
 			alert('비동기 오류');

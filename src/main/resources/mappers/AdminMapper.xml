@@ -4,27 +4,39 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.springboot.starbucks.domain.admin.ProductRepository">
+	<sql id="auto_increment__product_code">
+		select
+			ifnull(max(product_code), 0) + 1
+		from
+			product_info;
+	</sql>
 	<insert id="insertProduct" parameterType="com.springboot.starbucks.domain.admin.Product">
+	<selectKey keyProperty="product_code" resultType="Integer" order="BEFORE"> 
+		<include refid="auto_increment__product_code"></include>
+	</selectKey>
 	insert into
 		product_info
 	values(
-		0,
+		#{product_code},
 		#{product_name},
 		#{product_price},
 		#{product_img},
 		now(),
 		now()
-	),
+	);
 	insert into
 		product_categorys
-	values(
-		0,
-	<foreach collection="product_categoryName" item="product_categoryName" index="i">
-		#{product_categoryName[i]},
+	values
+	<foreach collection="product_categoryNames" item="categoryName" separator=",">
+		(
+			0,
+			#{product_code},
+			#{categoryName},
+			now(),
+			now()
+		)
 	</foreach>
-		now(),
-		now()
-	);
+	;
 	</insert>
 
 

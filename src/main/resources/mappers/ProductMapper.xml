@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.springboot.starbucks.domain.admin.ProductRepository">
+
+<select id="getProductByProductCategoryName" parameterType="String" resultType="com.springboot.starbucks.domain.admin.Product">
+	select
+		product_categoryName,
+		product_name,
+		product_price,
+		product_img
+	from
+		product_categorys pc
+		LEFT outer join product_info pi on(pi.product_code = pc.product_code)
+	where
+		pc.product_categoryName = #{productCategoryName};
+</select>
+
+</mapper>

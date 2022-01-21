@@ -1,6 +1,6 @@
 package com.springboot.starbucks.web.dto.admin;
 
-import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,18 +11,18 @@ import lombok.Data;
 
 @Data
 @Builder
-public class ProductDto {
+public class ProductReqDto {
 
 	private String product_name;
 	private int product_price;
 	private MultipartFile product_img;
-	private String[] product_categoryName;
+	private List<String> product_categoryName;
 	
 	public Product toProductEntity() {
 		return Product.builder()
 				.product_name(product_name)
 				.product_price(product_price)
-				.product_categoryName(product_categoryName)
+				.product_categoryNames(product_categoryName)
 				.build();
 	}
 }

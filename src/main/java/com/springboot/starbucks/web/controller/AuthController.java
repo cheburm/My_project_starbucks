@@ -28,4 +28,5 @@ public class AuthController {
 		ModelAndView mav = new ModelAndView("/auth/signin");
 		return mav;
 	}
+	
 }
