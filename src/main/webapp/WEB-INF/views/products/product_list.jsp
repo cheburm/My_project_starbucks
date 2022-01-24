@@ -73,7 +73,7 @@
             <div class="product-list">
             <c:forEach var="product" items="${product.productList }">
                 <div class="product">
-                    <a href="" class="product-link">
+                    <a href="/product/${product.product_code }" class="product-link">
                         <img src="/image/products/${product.product_img }">
                         <div class="product-name"><strong>${product.product_name }</strong></div>
                         <strong class="product-price"><span>${product.product_price }</span>원</strong>

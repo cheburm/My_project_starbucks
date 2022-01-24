@@ -26,9 +26,16 @@ public class ProductController {
 	@GetMapping("/category/{productCategoryName}")
 	public ModelAndView producytListPage(@PathVariable String productCategoryName) {
 		ModelAndView mav = new ModelAndView("/products/product_list");
-		mav.addObject("product", productService.getproductList(productCategoryName));
+		mav.addObject("product", productService.getProductList(productCategoryName));
 		return mav;
-
+	}
+	
+	@GetMapping("/product/{product_code}")
+	public ModelAndView productDtlPage(@PathVariable int product_code) {
+		ModelAndView mav = new ModelAndView("/products/product_dtl_info");
+		mav.addObject("productDtl",productService.getProductDtl(product_code));
+		return mav;
+		
 	}
 
 }

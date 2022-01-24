@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public ProductRespDto getproductList(String productCategoryName) {
+	public ProductRespDto getProductList(String productCategoryName) {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("tumbler", "텀블러");
 		map.put("coldCup", "콜드컵");
@@ -76,6 +76,12 @@ public class ProductServiceImpl implements ProductService{
 		productRespDto.setProductCategoryName(map.get(productCategoryName));
 
 		return productRespDto;
+	}
+
+	@Override
+	public Product getProductDtl(int product_code) {
+		Product productDtl = productRepository.getProductByProductDtl(product_code);
+		return productDtl;
 	}
 
 }

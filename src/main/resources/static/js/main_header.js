@@ -11,6 +11,8 @@ for (let i = 0; i < productCategorys.length; i++) {
 	}
 }
 
+
+
 userAnotherNavBtn.onclick = () => {
 	userAnotherNav.style.display = 'block';
 }
