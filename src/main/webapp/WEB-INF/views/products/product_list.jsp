@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
     
 <!DOCTYPE html>
 <html lang="ko">
@@ -18,18 +20,18 @@
         <div class="product-list-container">
             <div class="product-nav">
                 <div class="product-info">
-                    <span class="product-kind-name"></span>
+                    <span class="product-kind-name">${product.productCategoryName }</span>
                     <button class="product-kind-view" type="button">
-                        <span></span>(총 <span>01</span>개)
+                        <span>${product.productCategoryName }</span>(총 <span>01</span>개)
                         <i class="fas fa-sort-down"></i>
                         <ul class="product-kind-list">
                             <li>텀블러</li>
                             <li>콜드컵</li>
                             <li>보온병</li>
                             <li>워터보틀</li>
-                            <li>머그,컵</li>
+                            <li>머그컵</li>
                             <li>라이프스타일</li>
-                            <li>티,커피용품</li>
+                            <li>커피용품</li>
                             <li>전체상품</li>
                             <li>추천상품</li>
                         </ul>
@@ -69,22 +71,16 @@
                 </div>
             </div>
             <div class="product-list">
+            <c:forEach var="product" items="${product.productList }">
                 <div class="product">
                     <a href="" class="product-link">
-                        <img src="/coffeImg/best1.png" alt="">
-                        <div class="product-name"><strong>그린 사이렌 도트 머그 237ml</strong></div>
-                        <strong class="product-price"><span>111,111</span>원</strong>
+                        <img src="/image/products/${product.product_img }">
+                        <div class="product-name"><strong>${product.product_name }</strong></div>
+                        <strong class="product-price"><span>${product.product_price }</span>원</strong>
                     </a>
                     <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
                 </div>
-                <div class="product">
-                    <a href="" class="product-link">
-                        <img src="/coffeImg/best1.png" alt="">
-                        <div class="product-name"><strong>그린 사이렌 도트 머그 237ml</strong></div>
-                        <strong class="product-price"><span>111,111</span>원</strong>
-                    </a>
-                    <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                </div>
+            </c:forEach>
             </div>
             <div class="product-page-num">
                 <a href="">1</a>

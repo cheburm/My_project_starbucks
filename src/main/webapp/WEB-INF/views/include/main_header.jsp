@@ -71,9 +71,9 @@
 						<li><a class="category">콜드컵</a></li>
 						<li><a class="category">보온병</a></li>
 						<li><a class="category">워터보틀</a></li>
-						<li><a class="category">머그,컵</a></li>
+						<li><a class="category">머그컵</a></li>
 						<li><a class="category">라이프스타일</a></li>
-						<li><a class="category">티,커피용품</a></li>
+						<li><a class="category">커피용품</a></li>
 						<li><a class="category">전체상품</a></li>
 						<li class="recommend-list-btn"><a href="">추천상품 <i
 								class="fas fa-chevron-down"></i></a>

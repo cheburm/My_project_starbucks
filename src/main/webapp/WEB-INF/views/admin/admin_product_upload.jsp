@@ -22,9 +22,9 @@
                 <input class="category-btn"  type="button" value="콜드컵">
                 <input class="category-btn"  type="button" value="보온병">
                 <input class="category-btn"  type="button" value="워터보틀">
-                <input class="category-btn"  type="button" value="머그,컵">
+                <input class="category-btn"  type="button" value="머그컵">
                 <input class="category-btn"  type="button" value="라이프스타일">
-                <input class="category-btn"  type="button" value="티,커피용품">
+                <input class="category-btn"  type="button" value="커피용품">
                 <input class="category-btn"  type="button" value="추천상품">
             </div>
             <div class="product-upload-info">

@@ -9,4 +9,5 @@ public interface ProductRepository {
 
 	public int insertProduct(Product product);
 	public List<Product> getProductByProductCategoryName(String productCategoryName);
+	public List<Product> getProductByProductCategoryAll(String productCategoryName);
 }

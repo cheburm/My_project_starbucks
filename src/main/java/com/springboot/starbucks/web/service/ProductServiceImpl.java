@@ -59,16 +59,21 @@ public class ProductServiceImpl implements ProductService{
 		map.put("coldCup", "콜드컵");
 		map.put("thermos", "보온병");
 		map.put("waterBottle", "워터보틀");
-		map.put("mugAndCup", "머그,컵");
+		map.put("mugAndCup", "머그컵");
 		map.put("lifeStyle", "라이프스타일");
-		map.put("teaAndCoffeeSupplie", "티,커피용품");
+		map.put("teaAndCoffeeSupplie", "커피용품");
 		map.put("productAll", "전체상품");
 		
 		
 		ProductRespDto productRespDto = new ProductRespDto();
-		List<Product> productListAll = (productRepository.getProductByProductCategoryName(map.get(productCategoryName)));
+		List<Product> productListAll = null;
+		if (productCategoryName.equals("productAll")) {
+			productListAll = (productRepository.getProductByProductCategoryAll(map.get(productCategoryName)));
+		} else {
+			productListAll = (productRepository.getProductByProductCategoryName(map.get(productCategoryName)));
+		}
 		productRespDto.setProductList(productListAll);
-		productRespDto.setProductName(map.get(productCategoryName));
+		productRespDto.setProductCategoryName(map.get(productCategoryName));
 
 		return productRespDto;
 	}

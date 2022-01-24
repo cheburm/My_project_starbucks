@@ -18,4 +18,17 @@
 		pc.product_categoryName = #{productCategoryName};
 </select>
 
+<select id="getProductByProductCategoryAll" parameterType="String" resultType="com.springboot.starbucks.domain.admin.Product">
+	select
+		product_categoryName,
+		product_name,
+		product_price,
+		product_img
+	from
+		product_categorys pc
+		LEFT outer join product_info pi on(pi.product_code = pc.product_code)
+	group by 
+		product_name;
+</select>
+
 </mapper>

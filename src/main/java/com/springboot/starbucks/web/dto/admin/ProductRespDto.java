@@ -10,5 +10,5 @@ import lombok.Data;
 public class ProductRespDto {
 
 	private List<Product> productList;
-	private String productName;
+	private String productCategoryName;
 }
