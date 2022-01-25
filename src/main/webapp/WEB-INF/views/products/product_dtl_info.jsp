@@ -147,9 +147,9 @@
                     <button>반품/교환정보</button>
                 </div>
                 <div class="product-dtl-info">
-                    <img src="coffeImg/product-info1.jpg" alt="">
-                    <img src="coffeImg/product-info2.jpg" alt="">
-                    <img src="coffeImg/product-info3.jpg" alt="">
+                    <img src="" alt="">
+                    <img src="/coffeImg/product-info2.jpg" alt="">
+                    <img src="/coffeImg/product-info3.jpg" alt="">
                 </div>
                 <div class="product-comment" style="display: none;">
                     <div class="product-comment-nav">

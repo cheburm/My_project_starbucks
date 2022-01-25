@@ -15,24 +15,33 @@
 
 <body>
     <div class="container">
-    <jsp:include page="../include/main_header.jsp"></jsp:include>
+        <jsp:include page="../include/main_header.jsp"></jsp:include>
         <form class="product-upload-content">
             <div class="product-category-btn">
-                <input class="category-btn"  type="button" value="텀블러">
-                <input class="category-btn"  type="button" value="콜드컵">
-                <input class="category-btn"  type="button" value="보온병">
-                <input class="category-btn"  type="button" value="워터보틀">
-                <input class="category-btn"  type="button" value="머그컵">
-                <input class="category-btn"  type="button" value="라이프스타일">
-                <input class="category-btn"  type="button" value="커피용품">
-                <input class="category-btn"  type="button" value="추천상품">
+                <input class="category-btn" type="button" value="텀블러">
+                <input class="category-btn" type="button" value="콜드컵">
+                <input class="category-btn" type="button" value="보온병">
+                <input class="category-btn" type="button" value="워터보틀">
+                <input class="category-btn" type="button" value="머그컵">
+                <input class="category-btn" type="button" value="라이프스타일">
+                <input class="category-btn" type="button" value="커피용품">
+                <input class="category-btn" type="button" value="추천상품">
             </div>
             <div class="product-upload-info">
                 <div class="product-upload-img">
-                    <div>
-                        <button type="reset" class="img-delete"><i class="fas fa-times-circle"></i></button>
+                    <div class="item-msg">
+                        <i>상품의 사진을 등록해주세요.</i>
                     </div>
-                    <input type="file" name="product_img">
+                    <input type="file" class="file" name="product_img" onchange="readURL(this);">
+                    <br /><br />
+                    <img id="preview" class="preview" />
+                    <button type="reset" class="img-delete"><i class="fas fa-times-circle"></i></button>
+                    <div class="itemdtl-msg" style="display: none;">
+                        <i>
+                            상품의 상세정보 파일을 등록해주세요.
+                        </i>
+                        <input type="file" name="productDtl_img">
+                    </div>
                 </div>
                 <div>
                     <input type="text" placeholder="상품명을 입력하세요." name="product_name" class="product-info-ip">

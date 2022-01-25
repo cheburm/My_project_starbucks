@@ -1,6 +1,9 @@
 const categoryBtn = document.querySelectorAll('.category-btn');
 const productUpload = document.querySelector('.product-upload');
 const form = document.querySelector('.product-upload-content');
+const imgDelete = document.querySelector('.img-delete');
+const itemDtlMsg = document.querySelector('.itemdtl-msg');
+const preview = document.querySelector('.preview');
 
 var categoryBtnFlag = new Array();
 var categoryName = new Array();
@@ -39,6 +42,34 @@ productUpload.onclick = () => {
 			alert('비동기 오류');
 		}
 	})
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            imgDelete.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+        productDtlInput();
+    } else {
+        preview.src = "";
+    }
+}
+
+imgDelete.onclick = () => {
+    imgDelete.style.display = 'none';
+    preview.src = "";
+    itemDtlMsg.style.display = 'none';
+}
+
+function productDtlInput() {
+    if (preview.src == null) {
+        itemDtlMsg.style.display = 'none';
+    } else {
+        itemDtlMsg.style.display = 'block';
+    }
 }
 
 
