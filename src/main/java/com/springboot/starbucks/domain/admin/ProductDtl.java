@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 public class ProductDtl {
 
 	private int product_code;
-	private MultipartFile product_introductionFile;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 }

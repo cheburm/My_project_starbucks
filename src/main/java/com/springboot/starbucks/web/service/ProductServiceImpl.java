@@ -10,8 +10,10 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.starbucks.domain.admin.Product;
+import com.springboot.starbucks.domain.admin.ProductDtl;
 import com.springboot.starbucks.domain.admin.ProductRepository;
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
 import com.springboot.starbucks.web.dto.admin.ProductRespDto;
@@ -20,36 +22,53 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductServiceImpl implements ProductService{
-	
+public class ProductServiceImpl implements ProductService {
+
 	@Value("${file.path}")
 	private String filePath;
 
 	private final ProductRepository productRepository;
-	
+
 	@Override
 	public void productUpload(ProductReqDto productReqDto) {
-		String originFileName = productReqDto.getProduct_img().getOriginalFilename();
-		String originFileExtension = originFileName.substring(originFileName.lastIndexOf("."));
-		String tempFileName = UUID.randomUUID().toString().replaceAll("-", "") + originFileExtension;
-		String adminFolder = "products/";
-		String imageFilePath = filePath + adminFolder + tempFileName;
+		String productFile[] = { productReqDto.getProduct_img().getOriginalFilename(),
+				productReqDto.getProduct_introduction_img().getOriginalFilename() };
+		String adminFolder;
+		Product productEntity = productReqDto.toProductEntity();
 		
-		File productImgFile = new File(imageFilePath);
-		
-		if (!productImgFile.exists()) {
-			productImgFile.mkdirs();
+		for (int i = 0; i < productFile.length; i++) {
+			String originFileName = productFile[i];
+			String originFileExtension = originFileName.substring(originFileName.lastIndexOf("."));
+			String tempFileName = UUID.randomUUID().toString().replaceAll("-", "") + originFileExtension;
+			if (i == 0) {
+				adminFolder = "products/";
+			} else {
+				adminFolder = "productDtls/";
+			}
+			String imageFilePath = filePath + adminFolder + tempFileName;
+			File productImgFile = new File(imageFilePath);
+
+			if (!productImgFile.exists()) {
+				productImgFile.mkdirs();
+			}
+			
+			if (i == 0) {
+				try {
+					productReqDto.getProduct_img().transferTo(productImgFile);
+					productEntity.setProduct_img(tempFileName);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+			} else {
+				try {
+					productReqDto.getProduct_introduction_img().transferTo(productImgFile);
+					productEntity.setProduct_introduction_img(tempFileName);
+				} catch (IllegalStateException | IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
-		
-		try {
-			productReqDto.getProduct_img().transferTo(productImgFile);
-			Product productEntity = productReqDto.toProductEntity();
-			productEntity.setProduct_img(tempFileName);
-			productRepository.insertProduct(productEntity);
-		} catch (IllegalStateException | IOException e) {
-			e.printStackTrace();
-		}
-		
+		productRepository.insertProduct(productEntity);
 	}
 
 	@Override
@@ -63,8 +82,7 @@ public class ProductServiceImpl implements ProductService{
 		map.put("lifeStyle", "라이프스타일");
 		map.put("teaAndCoffeeSupplie", "커피용품");
 		map.put("productAll", "전체상품");
-		
-		
+
 		ProductRespDto productRespDto = new ProductRespDto();
 		List<Product> productListAll = null;
 		if (productCategoryName.equals("productAll")) {

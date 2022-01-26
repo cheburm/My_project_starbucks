@@ -88,12 +88,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="" class="signin-banner">
-                            <span>5% 적립</span>
+                        <c:if test="${empty principal.username}">
+                        <a href="/auth/signin" class="signin-banner" >
+                            <span>로그인구매시 5% 적립</span>
                             포기하시겠어요?
                             <div>받기</div>
                             <p>></p>
                         </a>
+                        </c:if>
                         <div class="pay-info">
                             <span>무이자 할부</span>
                         </div>
@@ -147,7 +149,7 @@
                     <button>반품/교환정보</button>
                 </div>
                 <div class="product-dtl-info">
-                    <img src="" alt="">
+                    <img src="/image/productDtls/${productDtl.product_introduction_img }" alt="">
                     <img src="/coffeImg/product-info2.jpg" alt="">
                     <img src="/coffeImg/product-info3.jpg" alt="">
                 </div>

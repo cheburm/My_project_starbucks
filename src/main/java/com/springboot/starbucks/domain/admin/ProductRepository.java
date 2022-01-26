@@ -12,6 +12,6 @@ public interface ProductRepository {
 	public List<Product> getProductByProductCategoryName(String productCategoryName);
 	// 모든상품 리스트 불러오기
 	public List<Product> getProductByProductCategoryAll(String productCategoryName);
-	
+	// 상품 상세정보 불러오기
 	public Product getProductByProductDtl(int product_code);
 }

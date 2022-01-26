@@ -20,6 +20,7 @@ public class Product {
 	private String product_img;
 	private List<String> product_categoryNames;
 	private String product_categoryName;
+	private String product_introduction_img;
 	
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

@@ -40,7 +40,7 @@
                         <i>
                             상품의 상세정보 파일을 등록해주세요.
                         </i>
-                        <input type="file" name="productDtl_img">
+                        <input type="file" name="product_introduction_img">
                     </div>
                 </div>
                 <div>

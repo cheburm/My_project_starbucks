@@ -35,13 +35,15 @@
 
 <select id="getProductByProductDtl" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.Product">
 	select
-		product_name,
-		product_price,
-		product_img
+		pi.product_name,
+		pi.product_price,
+		pi.product_img,
+		pdi.product_introduction_img
 	from
-		product_info
+		product_info pi
+		LEFT OUTER JOIN productdtl_info pdi ON(pi.product_code = pdi.product_code)
 	where
-		product_code = #{product_code};
+		pi.product_code = #{product_code};
 </select>
 
 </mapper>

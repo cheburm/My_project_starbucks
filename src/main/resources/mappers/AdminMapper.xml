@@ -37,6 +37,14 @@
 		)
 	</foreach>
 	;
+	insert into
+		productdtl_info
+	values(
+		#{product_code},
+		#{product_introduction_img},
+		now(),
+		now()
+	);
 	</insert>
 
 

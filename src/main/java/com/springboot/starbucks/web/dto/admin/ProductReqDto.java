@@ -18,7 +18,7 @@ public class ProductReqDto {
 	private int product_price;
 	private MultipartFile product_img;
 	private List<String> product_categoryName;
-	private MultipartFile product_introductionFile;
+	private MultipartFile product_introduction_img;
 	
 	public Product toProductEntity() {
 		return Product.builder()
@@ -28,9 +28,4 @@ public class ProductReqDto {
 				.build();
 	}
 	
-	public ProductDtl toproductDtlEntity() {
-		return ProductDtl.builder()
-				.product_introductionFile(product_introductionFile)
-				.build();
-	}
 }
