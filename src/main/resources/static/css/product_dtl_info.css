@@ -360,66 +360,10 @@
     padding-bottom: 100px;
     border-bottom: 1px solid #e9e9e9;
 }
-.product-comment{
-    width: 100%; height: 100%;
-    padding-top: 36px;
-}
-.product-comment-nav{
-    width: 100%; height: 23px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-}
-.product-comment-nav strong{
-    font-style: 16px;
-}
-.product-comment-nav span{
-    font-size: 18px;
-    font-weight: 900;
-}
-.comment-nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.comment-nav a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15px;
-    color: #888888;
-    font-size: 13px;
-    padding: 0 13px;
-    border-left: 1px solid #dedfe1;
-}
-.comment-nav a:first-child{
-    border-left: none;
-}
-.comment-nav a:last-child{
-    padding-right: 0;
-}
-.product-comment-user{
-    display: flex;
-    justify-content: space-between;
-    width: 100%; height: 155px;
-    padding: 20px 0;
-    box-sizing: border-box;
-}
-.user-upload-date{
-    display: flex;
-}
-.user-upload-date img{
-    width: 30px; height: 30px;
-    border-radius: 50%;
-}
-.product-user-info pre{
-    width: 100%;
-}
 
 /* ¸®ºä */
 
-.product-review-container{
+.product-review-body{
     margin: 0 auto;
     width: 1020px; height: 100%;
     padding-top: 36px;

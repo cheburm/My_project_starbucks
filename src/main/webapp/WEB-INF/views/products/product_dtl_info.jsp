@@ -144,48 +144,17 @@
                     </div>
                 </div>
                 <div class="product-tag-list">
-                    <button>상세정보</button>
-                    <button>리뷰<span></span></button>
-                    <button>반품/교환정보</button>
+                    <button class="product-tag-btn">상세정보</button>
+                    <button class="product-tag-btn">리뷰</button>
+                    <button class="product-tag-btn">반품/교환정보</button>
                 </div>
                 <div class="product-dtl-info">
                     <img src="/image/productDtls/${productDtl.product_introduction_img }" alt="">
                     <img src="/coffeImg/product-info2.jpg" alt="">
                     <img src="/coffeImg/product-info3.jpg" alt="">
                 </div>
-                <div class="product-comment" style="display: none;">
-                    <div class="product-comment-nav">
-                        <strong>리뷰 <span>200</span>건</strong>
-                        <div class="comment-nav">
-                            <a href="">최신순</a>
-                            <a href="">평점 높은순</a>
-                            <a href="">평점 낮은순</a>
-                        </div>
-                    </div>
-                    <div class="product-comment-list">
-                        <div class="product-comment-user">
-                            <div class="product-user-info">
-                                <div class="user-upload-date">
-                                    <img src="coffeImg/onthego.png" alt="">
-                                    <div class="user-date">
-                                        <i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i><i class="fas fa-heart"></i>
-                                        <div class="user-dtl-info">
-                                            <span>coqja2013</span>ㆍ<span>2022.01.13</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <pre>
-                                    sdadsadsadsadsa
-                                    asdasdasdasdsa
-                                    dasdsadsadadsa
-                                </pre>
-                            </div>
-                            <img src="coffeImg/product1.png" alt="">
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="product-review-container">
+            <div class="product-review-body" style="display: none">
                 <div class="review-nav">
                     <strong>리뷰 <div>500</div>건</strong>
                     <div class="review-order">
@@ -222,6 +191,7 @@
         </div>
         <jsp:include page="../include/main_footer.jsp"></jsp:include>
     </div>
+    <script src="/js/product_dtl_info.js"></script>
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
 </body>
 </html>
