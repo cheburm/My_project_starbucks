@@ -185,6 +185,40 @@
                     </div>
                 </div>
             </div>
+            <div class="product-review-container">
+                <div class="review-nav">
+                    <strong>리뷰 <div>500</div>건</strong>
+                    <div class="review-order">
+                        <a href="">최신순</a>
+                        <a href="">평점 높은순</a>
+                        <a href="">평점 낮은순</a>
+                    </div>
+                </div>
+                <div class="product-review-list">
+                    <div class="product-review">
+                        <div class="product-review-info">
+                            <div class="review-user-info">
+                                <img src="/coffeImg/work.png" alt="">
+                                <div class="review-upload">
+                                    <div class="product-review-score">☆☆☆☆☆<span>3</span></div>
+                                    <div class="uload-info">
+                                        <span class="user-id">coqja2013</span>ㆍ
+                                        <span class="reivew-upload-date">22.01.22</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-preview">
+                                <div class="user-review">
+                                    sdcscvdsvsdvsdvsdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdsds
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-imgs">
+                            <img src="/coffeImg/work.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <jsp:include page="../include/main_footer.jsp"></jsp:include>
     </div>
