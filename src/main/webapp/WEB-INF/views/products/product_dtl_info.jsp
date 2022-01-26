@@ -154,6 +154,7 @@
                     <img src="/coffeImg/product-info3.jpg" alt="">
                 </div>
             </div>
+            
             <div class="product-review-body" style="display: none">
                 <div class="review-nav">
                     <strong>리뷰 <div>500</div>건</strong>
@@ -184,6 +185,70 @@
                         </div>
                         <div class="review-imgs">
                             <img src="/coffeImg/work.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-refund-body" style="display: none">
+                <h3 class="product-refund-msg">반품/교환정보</h3>
+                <div class="refund-msg-guide">
+                    <strong>스타벅스 반품/교환 안내</strong>
+                    <p>반품 시 먼저 판매자와 연락하셔서 반품사유,택배사,배송비,반품지 주소 등을 협의하신 후 반품상품을 발송해 주시기 바랍니다.</p>
+                </div>
+                <div>
+                    <div class="refund-box">
+                        <div scope="row" class="refund-box-msg">판매자 지정택배사</div>
+                        <div colspan="3" class="refund-box-comment">CJ대한통운</div>
+                    </div>
+                    <div class="refund-box">
+                        <div scope="row" class="refund-box-msg">반품배송비</div>
+                        <div class="refund-box-comment">편도 3,000원 (최초 배송비 무료인 경우 6,000원 부과)</div>
+                    </div>
+                    <div class="refund-box">
+                        <div scope="row" class="refund-box-msg">보내실 곳</div>
+                        <div colspan="3" class="refund-box-comment">경기도 고양시 덕양구 대덕로 121 2층 경기광주 집배점 (우 : 10541) </div>
+                    </div>
+                    <div class="refund-box">
+                        <div scope="row" rowspan="2" class="refund-box-msg">반품/교환 사유에 따른 요청 가능 기간</div>
+                        <div colspan="3" class="refund-box-comment">구매자 단순 변심은 상품 수령 후 7일 이내
+                            <span class="_3OXYkEjCxo">(구매자 반품배송비 부담)</span>
+                        </div>
+                    </div>
+                    <div class="refund-box">
+                        <div class="refund-box">
+                            <div scope="row" rowspan="7" class="refund-box-msg">반품/교환 불가능 사유</div>
+                            <div colspan="3" class="refund-box-comment">
+                                <ul class="_1KgmaRlDnI">
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">1.</span>반품요청기간이 지난 경우</li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">2.</span>구매자의 책임 있는 사유로 상품 등이 멸실
+                                        또는
+                                        훼손된 경우 <span class="_3OXYkEjCxo">(단, 상품의 내용을 확인하기 위하여 포장 등을 훼손한 경우는 제외)</span>
+                                    </li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">3.</span>구매자의 책임있는 사유로 포장이 훼손되어 상품
+                                        가치가
+                                        현저히 상실된 경우
+                                        <span class="_3OXYkEjCxo">(예: 식품, 화장품, 향수류, 음반 등)</span>
+                                    </li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">4.</span>구매자의 사용 또는 일부 소비에 의하여 상품의
+                                        가치가
+                                        현저히 감소한 경우
+                                        <span class="_3OXYkEjCxo">(라벨이 떨어진 의류 또는 태그가 떨어진 명품관 상품인 경우)</span>
+                                    </li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">5.</span>시간의 경과에 의하여 재판매가 곤란할 정도로
+                                        상품
+                                        등의 가치가 현저히 감소한 경우
+                                    </li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">6.</span>고객의 요청사항에 맞춰 제작에 들어가는
+                                        맞춤제작상품의
+                                        경우 <span class="_3OXYkEjCxo">(판매자에게 회복불가능한 손해가 예상되고, 그러한 예정으로 청약철회권 행사가 불가하다는
+                                            사실을 서면
+                                            동의 받은 경우)</span>
+                                    </li>
+                                    <li class="_2VsRrv9CHS"><span class="_18irp6aLGm">7.</span>복제가 가능한 상품 등의 포장을 훼손한 경우
+                                        <span class="_3OXYkEjCxo">(CD/DVD/GAME/도서의 경우 포장 개봉 시)</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
