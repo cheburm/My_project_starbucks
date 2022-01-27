@@ -448,6 +448,25 @@
 	padding-top: 36px;
 }
 
+.review-write-page-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 12px;
+	border: 1px solid #dedfe1;
+	border-radius: 8px;
+	box-shadow: 3px 3px 5px #006633;
+	margin-left: 400px;
+	cursor: pointer;
+	font-size: 14px;
+	background-color: #fafafa;
+}
+
+.review-write-page-box:hover {
+	box-shadow: 5px 5px 5px 0.5px #478566;
+	background-color: #f1f2f4;
+}
+
 .review-nav {
 	display: flex;
 	justify-content: space-between;

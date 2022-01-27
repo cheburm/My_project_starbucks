@@ -31,4 +31,9 @@ public class PageController {
 		return "/products/product_list";
 	}
 	
+	@GetMapping("/review")
+	public String revieWritePage() {
+		return "review_write";
+	}
+	
 }

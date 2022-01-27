@@ -158,6 +158,9 @@
             <div class="product-review-body" style="display: none">
                 <div class="review-nav">
                     <strong>리뷰 <div>500</div>건</strong>
+                    <div class="review-write-page-box">
+                        <a onclick="window.open('/review')">리뷰작성하러가기</a>
+                    </div>
                     <div class="review-order">
                         <a href="">최신순</a>
                         <a href="">평점 높은순</a>

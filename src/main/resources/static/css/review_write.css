@@ -1,0 +1,209 @@
+.review-write-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 50px;
+    background-color: #006633;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+}
+.review-write-container{
+    width: 1020px; height: 100%;
+    margin: 0 auto;
+}
+.photo-review-banner{
+    margin-top: 20px;
+}
+.photo-review-guide-box{
+    width: 100%; height: 46px;
+    padding: 16px 15px 13px 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5c6686;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.photo-review-guide{
+    font-size: 14px;
+    color: white;
+    font-weight: 900;
+}
+.photo-review-guide span{
+    color: yellow;
+}
+.photo-review-guide-box i {
+    color: white;
+}
+.review-another-guide{
+    width: 100%; height: 70px;
+    padding: 10px 13px 13px;
+    background-color: #5c6686;
+    font-size: 13px;
+    box-sizing: border-box;
+    border-top: 1px solid #747474;
+    color: #cecece;
+}
+.review-another-guide li{
+    width: 100%; height: 23px;
+}
+.review-another-guide li span{
+    color: yellow;
+    font-weight: 900;
+}
+
+.review-product-info{
+    display: flex;
+    align-items: center;
+    width: 100%; height: 115px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.review-product-info img{
+    width: 75px; height: 75px;
+    border: 1px solid #ebebeb;
+}
+.review-productdtl-info{
+    padding-left: 14px;   
+}
+.review-productdtl-info p{
+    font-size: 13px;
+    color: #bbbbbb;
+
+}
+.review-productdtl-info h2{
+    font-size: 14px;
+    margin-top: 8px;
+    font-weight: 600;
+}
+.review-product-score{
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.review-product-score-msg{
+    height: 49px;
+    padding-top: 28px;
+    font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+.product-score-give-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 103px;
+    padding: 30px 0 26px;
+    box-sizing: border-box;
+}
+.product-score-give button{
+    font-size: 45px;
+    margin: 0 5px;
+    color: #dfdfdf;
+}
+.product-score-give-box span{
+    margin-top: 6px;
+    font-size: 13px;
+    color: #959595;
+}
+.review-product-write{
+    border-top: 1px solid #ebebeb;
+}
+.review-product-write-msg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 49px;
+    font-size: 18px;
+    padding-top: 28px;
+    box-sizing: border-box;
+}
+.review-write-box{
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin: 11px 20px 0;
+    padding: 10px 10px 11px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    border: 1px solid #cecece;
+}
+.review-write{
+    width: 100%; height: 100px;
+    resize: none;
+    background-color: #f4f4f4;
+    color: #999999;
+}
+.review-write::placeholder{
+    color: #999999;
+}
+.review-write-count{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    color: #959595;
+    margin: 10px 5px 0 0;
+}
+.review-photo-box{
+    width: 100%; height: 153px;
+    padding: 29px 20px;
+    box-sizing: border-box;
+}
+.review-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    font-size: 18px;
+    color: #222222;
+    border: 1px dashed black;
+    cursor: pointer;
+    font-weight: 700;
+}
+.review-photo i {
+    margin-right: 5px;
+}
+.review-photo:hover{
+    background-color: #f3f4f3;
+}
+.review-photo-box p {
+    height: 19px;
+    font-size: 12px;
+    margin-top: 11px;
+    color: #f43435;
+}
+.product-review-upload{
+    width: 100%; height: 158px;
+    border-top: 1px solid #ebebeb;
+}
+.product-review-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 33px 2px;
+}
+.product-review-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px; height: 40px;
+    padding: 2px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+.review-cancel-btn{
+    color: #555555;
+    border: 1px solid #c5cbd0;
+    background-color: white;
+    margin-right: 2px;
+}
+.review-upload-btn{
+    color: white;
+    border: 1px solid #cecece;
+    background-color: #dadde3;
+    margin-left: 2px;
+}
