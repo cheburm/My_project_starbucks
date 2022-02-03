@@ -35,6 +35,7 @@
 
 <select id="getProductByProductDtl" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.Product">
 	select
+		pi.product_code,
 		pi.product_name,
 		pi.product_price,
 		pi.product_img,
@@ -45,6 +46,37 @@
 	where
 		pi.product_code = #{product_code};
 </select>
+
+<select id="getProductByProduct" resultType="com.springboot.starbucks.domain.admin.Product">
+	select
+		product_code,
+		product_name,
+		product_img
+	from
+		product_info
+	where
+		product_code = #{product_code};
+</select>
+
+<insert id="insertProductReview" parameterType="com.springboot.starbucks.domain.admin.ProductDtl">
+
+	insert into
+		product_review
+	values
+	<foreach collection="review_files" item="review_file" separator=",">
+		(
+			0,
+			#{product_code},
+			#{user_id},
+			#{total_score},
+			#{review_write},
+			#{review_file},
+			now(),
+			now()
+		)
+	</foreach>
+	;
+</insert>
 
 </mapper>
 

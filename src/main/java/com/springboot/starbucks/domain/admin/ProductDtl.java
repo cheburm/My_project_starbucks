@@ -1,8 +1,7 @@
 package com.springboot.starbucks.domain.admin;
 
 import java.time.LocalDateTime;
-
-import org.springframework.web.multipart.MultipartFile;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,8 +13,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class ProductDtl {
-
+	
+	private int user_id;
 	private int product_code;
+	private int total_score;
+	private String review_write;
+	private List<String> review_files;
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 }

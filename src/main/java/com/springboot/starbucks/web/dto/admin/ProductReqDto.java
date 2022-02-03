@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.starbucks.domain.admin.Product;
-import com.springboot.starbucks.domain.admin.ProductDtl;
 
 import lombok.Builder;
 import lombok.Data;

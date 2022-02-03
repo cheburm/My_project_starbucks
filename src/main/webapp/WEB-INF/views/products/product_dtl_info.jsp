@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스타벅스</title>
     <link rel="stylesheet" href="/css/product_dtl_info.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -159,7 +160,7 @@
                 <div class="review-nav">
                     <strong>리뷰 <div>500</div>건</strong>
                     <div class="review-write-page-box">
-                        <a onclick="window.open('/review')">리뷰작성하러가기</a>
+                        <a href="/review/${productDtl.product_code }" target="_blank" class="review-page">리뷰작성하러가기</a>
                     </div>
                     <div class="review-order">
                         <a href="">최신순</a>
