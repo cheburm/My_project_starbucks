@@ -58,25 +58,56 @@
 		product_code = #{product_code};
 </select>
 
+<sql id="auto_increment__review_code">
+	select
+		ifnull(max(review_code), 0) + 1
+	from
+		product_review;
+</sql>
 <insert id="insertProductReview" parameterType="com.springboot.starbucks.domain.admin.ProductDtl">
-
+<selectKey keyProperty="review_code" resultType="Integer" order="BEFORE"> 
+	<include refid="auto_increment__review_code"></include>
+</selectKey>
 	insert into
 		product_review
+	values(
+		#{review_code},
+		#{product_code},
+		#{user_id},
+		#{total_score},
+		#{review_write},
+		now(),
+		now()
+		);
+	insert into
+		product_review_file
 	values
-	<foreach collection="review_files" item="review_file" separator=",">
+<foreach collection="review_files" item="review_file" separator=",">
 		(
-			0,
-			#{product_code},
-			#{user_id},
-			#{total_score},
-			#{review_write},
-			#{review_file},
-			now(),
-			now()
+		0,
+		#{review_code},
+		#{review_file},
+		now(),
+		now()
 		)
-	</foreach>
-	;
+</foreach>
+;
 </insert>
+
+
+<select id="getProductDtlByProductDtl" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.ProductDtl">
+select
+	pr.review_code,
+	pr.user_id,
+	pr.total_score,
+	pr.review_write,
+	prf.review_file
+from
+	product_review pr
+	LEFT OUTER JOIN product_review_file prf ON(prf.review_code = pr.review_code)
+where
+	pr.product_code = #{product_code};
+</select>
 
 </mapper>
 

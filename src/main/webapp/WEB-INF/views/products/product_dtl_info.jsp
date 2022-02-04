@@ -146,7 +146,7 @@
                 </div>
                 <div class="product-tag-list">
                     <button class="product-tag-btn">상세정보</button>
-                    <button class="product-tag-btn">리뷰</button>
+                    <button class="product-tag-btn" value="${productDtl.product_code }">리뷰</button>
                     <button class="product-tag-btn">반품/교환정보</button>
                 </div>
                 <div class="product-dtl-info">

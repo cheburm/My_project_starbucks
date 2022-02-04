@@ -3,7 +3,9 @@ package com.springboot.starbucks.web.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +16,7 @@ import com.springboot.starbucks.domain.admin.Product;
 import com.springboot.starbucks.domain.admin.ProductDtl;
 import com.springboot.starbucks.domain.admin.ProductRepository;
 import com.springboot.starbucks.web.dto.review.ProductReviewReqDto;
+import com.springboot.starbucks.web.dto.review.ProductReviewRespDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -69,4 +72,61 @@ public class ReviewServiceImpl implements ReviewService {
 		return productRepository.insertProductReview(productDtl);
 	}
 
+	@Override
+	public List<ProductReviewRespDto> getProductReview(int product_code) {
+		List<ProductDtl> reviewEntityList = productRepository.getProductDtlByProductDtl(product_code);
+		List<ProductReviewRespDto> reviewList = new ArrayList<ProductReviewRespDto>();
+		Set<Integer> reviewCountSet = new HashSet<Integer>();
+		
+		for(ProductDtl productDtl : reviewEntityList) {
+			reviewCountSet.add(productDtl.getReview_code());
+		}
+		System.out.println("set count: " + reviewCountSet.size());
+		int j = 0;
+		for (int i = 0; i < reviewCountSet.size(); i++) {
+			ProductDtl productDtl = reviewEntityList.get(j);
+			ProductReviewRespDto productReviewRespDto = ProductReviewRespDto.builder()
+														.review_code(productDtl.getReview_code())
+														.user_id(productDtl.getUser_id())
+														.total_score(productDtl.getTotal_score())
+														.review_write(productDtl.getReview_write())
+														.build();
+			List<String> review_files = new ArrayList<String>();
+			while(true) {
+				try {
+					ProductDtl nowProductDtl = reviewEntityList.get(j);
+					if(productDtl.getReview_code() != nowProductDtl.getReview_code()) {
+						break;
+					}
+					review_files.add(nowProductDtl.getReview_file());
+					j++;
+				}catch (Exception e) {
+					break;
+				}
+			}
+			productReviewRespDto.setReview_files(review_files);
+			reviewList.add(productReviewRespDto);
+		}
+		
+		System.out.println(reviewList);
+		
+		return reviewList;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

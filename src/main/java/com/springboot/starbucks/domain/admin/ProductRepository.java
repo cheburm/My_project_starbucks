@@ -22,4 +22,7 @@ public interface ProductRepository {
 	
 	// 상품리뷰 인설트
 	public int insertProductReview(ProductDtl productDtl);
+	
+	// 상품리뷰 불러오기
+	public List<ProductDtl> getProductDtlByProductDtl(int product_code);
 }

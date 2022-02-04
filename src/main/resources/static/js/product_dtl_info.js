@@ -31,6 +31,22 @@ for (let i = 0; i < productTagBtn.length; i++) {
 }
 
 
+/* 리뷰 불러오기 부분 */
+
+productTagListBtn[1].onclick = () => {
+	$.ajax({
+		type: "get",
+		url: "/totalReviewShow/" + productTagListBtn[1].value,
+		success: function(data){
+			
+		},
+		error: function(){
+			alert('비동기 오류')	
+		}
+	})
+}
+
+
 
 
 

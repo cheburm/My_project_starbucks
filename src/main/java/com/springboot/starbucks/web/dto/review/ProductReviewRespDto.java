@@ -1,6 +1,5 @@
-package com.springboot.starbucks.domain.admin;
+package com.springboot.starbucks.web.dto.review;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -8,19 +7,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class ProductDtl {
-	
+@Builder
+public class ProductReviewRespDto {
+
 	private int review_code;
 	private int user_id;
-	private int product_code;
 	private int total_score;
 	private String review_write;
 	private List<String> review_files;
-	private String review_file;
-	private LocalDateTime create_date;
-	private LocalDateTime update_date;
 }
