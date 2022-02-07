@@ -46,7 +46,7 @@
                         <div class="pay-point">
                             <div class="pay-point-name">
                             <c:choose>
-	                            <c:when test="${not empty principal.name}">
+	                            <c:when test="${not empty principal.user.name}">
 	                                <span>${principal.user.name }</span>
 	                                <span>님만을 위한 혜택</span>
 	                            </c:when>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="product-tag-list">
                     <button class="product-tag-btn">상세정보</button>
-                    <button class="product-tag-btn" value="${productDtl.product_code }">리뷰</button>
+                    <button class="product-tag-btn" value="${productDtl.product_code }" >리뷰</button>
                     <button class="product-tag-btn">반품/교환정보</button>
                 </div>
                 <div class="product-dtl-info">
@@ -155,7 +155,6 @@
                     <img src="/coffeImg/product-info3.jpg" alt="">
                 </div>
             </div>
-            
             <div class="product-review-body" style="display: none">
                 <div class="review-nav">
                     <strong>리뷰 <div>500</div>건</strong>
@@ -169,28 +168,6 @@
                     </div>
                 </div>
                 <div class="product-review-list">
-                    <div class="product-review">
-                        <div class="product-review-info">
-                            <div class="review-user-info">
-                                <img src="/coffeImg/work.png" alt="">
-                                <div class="review-upload">
-                                    <div class="product-review-score">☆☆☆☆☆<span>3</span></div>
-                                    <div class="uload-info">
-                                        <span class="user-id">coqja2013</span>ㆍ
-                                        <span class="reivew-upload-date">22.01.22</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="user-review-preview">
-                                <div class="user-review">
-                                    sdcscvdsvsdvsdvsdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdssdcscvdsvsdvsdvdsds
-                                </div>
-                            </div>
-                        </div>
-                        <div class="review-imgs">
-                            <img src="/coffeImg/work.png" alt="">
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="product-refund-body" style="display: none">

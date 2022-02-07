@@ -98,13 +98,17 @@
 <select id="getProductDtlByProductDtl" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.ProductDtl">
 select
 	pr.review_code,
+	pr.product_code,
 	pr.user_id,
+	um.username,
 	pr.total_score,
 	pr.review_write,
+	pr.create_date,
 	prf.review_file
 from
 	product_review pr
 	LEFT OUTER JOIN product_review_file prf ON(prf.review_code = pr.review_code)
+	LEFT OUTER JOIN user_mst um ON(um.id = pr.user_id)
 where
 	pr.product_code = #{product_code};
 </select>

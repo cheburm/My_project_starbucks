@@ -1,5 +1,7 @@
 package com.springboot.starbucks.web.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewReqDto;
+import com.springboot.starbucks.web.dto.review.ProductReviewRespDto;
 import com.springboot.starbucks.web.service.ProductService;
 import com.springboot.starbucks.web.service.ReviewService;
 
@@ -53,9 +56,8 @@ public class ProductController {
 	}
 	
 	@GetMapping("/totalReviewShow/{product_code}")
-	public String getProductReview(@PathVariable int product_code) {
-		reviewService.getProductReview(product_code);
-		return null;
+	public List<ProductReviewRespDto> getProductReview(@PathVariable int product_code) {
+		return reviewService.getProductReview(product_code);
 	}
 
 }
