@@ -373,6 +373,7 @@
 	font-size: 18px;
 	color: white;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .product-another-info {

@@ -33,7 +33,7 @@
 								<a href="/auth/signin" class="signin-btn">로그인</a>
 							</c:when>
 							<c:otherwise>
-								<button class="signout-btn">로그아웃</button>
+								<button onclick = "location.href ='/logout'" class="signout-btn">로그아웃</button>
 								<button class="user-another-nav-btn">
 									<i class="fas fa-chevron-down"></i>
 									<ul class="user-another-nav">

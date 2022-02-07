@@ -16,6 +16,7 @@
     <title>스타벅스</title>
     <link rel="stylesheet" href="/css/product_dtl_info.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
 </head>
 <body>
     <div class="container">
@@ -47,7 +48,7 @@
                             <div class="pay-point-name">
                             <c:choose>
 	                            <c:when test="${not empty principal.user.name}">
-	                                <span>${principal.user.name }</span>
+	                                <span class="user-name">${principal.user.name }</span>
 	                                <span>님만을 위한 혜택</span>
 	                            </c:when>
 	                            <c:otherwise>
@@ -117,7 +118,7 @@
                         <div class="pay-info">
                             <div class="product-num">
                                 <button>-</button>
-                                <span>1</span>
+                                <span></span>
                                 <button>+</button>
                             </div>
                         </div>
@@ -131,7 +132,7 @@
                             </div>
                         </div>
                         <div class="product-buy-box">
-                            <a href="" class="product-buy">
+                            <a class="product-buy">
                                 구매하기
                             </a>
                             <div class="product-another-info">

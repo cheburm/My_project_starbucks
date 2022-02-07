@@ -88,6 +88,73 @@ function reviewView(data) {
 	}
 }
 
+const productBtns = document.querySelectorAll('.product-num button');
+const productNums = document.querySelector('.product-num span');
+const productPrice = document.querySelector('.product-total-price h1');
+
+var productNum = 1;
+const productBasePrice = Number(productPrice.textContent);
+
+for (let i = 0; i < productBtns.length; i++) {
+	productBtns[i].onclick = () => {
+		if (i == 0 && productNums.textContent > 1) {
+			--productNum;
+			let productMinus = Number(productPrice.textContent) - productBasePrice;
+			let productTotalPrice = productMinus;
+			productPrice.textContent = productTotalPrice
+		}
+
+		if (i == 1 && productNums.textContent < 5) {
+			++productNum;
+			let productAdd = Number(productPrice.textContent) + productBasePrice;
+			let productTotalPrice = productAdd;
+			productPrice.textContent = productTotalPrice
+
+		} else if (i == 1 && productNums.textContent > 4) {
+			alert('5개 이하로 구매하실 수 있습니다.')
+		}
+		productNums.textContent = productNum;
+	}
+	productNums.textContent = productNum;
+}
+
+
+/*결제 시스템*/
+const productBuy = document.querySelector('.product-buy');
+const userName = document.querySelector('.user-name');
+
+// console.log(window.IMP);
+var IMP = window.IMP;
+IMP.init("imp40436278"); // 관리자콘솔
+var IMP_paramObj = null;
+
+productBuy.onclick = () => {
+	IMP_paramObj = {
+		pg: "html5_inicis", // 이니시스
+		pay_method: "card",
+		merchant_uid: "merchant_" + new Date().getTime, // 중복위험! UUID 사용해도 되고 시간 사용해도 됨
+		name: productName.textContent,
+		amount: productPrice.textContent,
+		buyer_name: userName.textContent,
+		/*buyer_email: "coqja2013@naver.com",
+		buyer_tel: "010-4619-2026",
+		buyer_addr: "경상남도 김해시 부원동",
+		buyer_postcode: "01181"*/
+	}
+
+	IMP.request_pay(IMP_paramObj,
+		function(rsp) { // callback
+			if (rsp.success) {
+				alert(rsp.success);
+				// 결제 성공
+				alert('결제되었습니다.감사합니다 사기당하셨습니다.');
+			} else {
+				// 결제 실패
+				alert('결제에 실패했습니다. 에러내용 : ' + rsp.error_msg);
+			}
+		});
+}
+
 
 
 

@@ -31,6 +31,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authenticated() //모두 인증을 거처야한다.
 			.anyRequest() //그 외의 모든 요청은
 			.permitAll() //승인해준다.(모두 권한을 허가)
+			.and()
+			.logout()
+			.logoutUrl("/logout")
+			.logoutSuccessUrl("/")
 			.and() //그리고
 			.formLogin() //로그인 화면은
 			.loginPage("/auth/signin") //해당 GET요청으로 응답해주면되고
