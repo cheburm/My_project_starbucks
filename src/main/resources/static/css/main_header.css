@@ -72,37 +72,14 @@
 	font-size: 12px;
 }
 
-.user-another-nav-btn {
-	position: relative;
-	margin-left: 15px;
-}
-
-.user-another-nav {
-	display: none;
-	width: 120px;
-	padding: 10px 20px 10px 10px;
-	position: absolute;
-	background-color: white;
+.mypage-btn{
+	color: #4f4f4f;
+	padding: 2px 5px;
 	border: 1px solid #d3d3d3;
-	z-index: 1;
-	right: -20px;
-	top: 23px;
-}
-
-.user-another-nav a {
-	display: flex;
-	align-items: center;
 	font-size: 12px;
-	margin-bottom: 3px;
+	margin-left: 5px;
 }
 
-.user-another-nav a:hover {
-	text-decoration: underline;
-}
-
-.user-another-nav a i {
-	padding-left: 5px;
-}
 /* �뿤�뜑 以묐떒 李쒗븯湲� */
 .page-like {
 	height: 34px;

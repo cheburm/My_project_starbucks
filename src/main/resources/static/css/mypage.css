@@ -1,0 +1,227 @@
+.container{
+    background-color: rgb(246, 246, 246);
+}
+
+.mypage-header{
+    width: 100%; height: 95px;
+    background-color: #006633;
+}
+.mypage-banner{
+    display: flex;
+    align-items: center;
+    width: 914px; height: 55px;
+    margin: 0 auto;
+    color: white;
+}
+.mypage-banner h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+}
+.brand-name{
+    font-size: 16px;
+    font-weight: 900;
+}
+.mypage-msg{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.mypage-banner-msgbox{
+    width: 100%; height: 40px;
+    background-color: white;
+    border-top: #03381e;
+}
+.mypage-banner-msg{
+    display: flex;
+    align-items: center;
+    width: 914px; height: 40px;
+    margin: 0 auto;
+}
+
+.mypage-myinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 13px;
+    font-weight: 900;
+    margin-right: 15px;
+    border-bottom: 3px solid #006633;
+    box-sizing: border-box;
+}
+.mypage-myinfo a{
+    color: #006633;
+}
+.product-myinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 13px;
+    font-weight: 900;
+    margin-right: 15px;
+    box-sizing: border-box;
+}
+.product-myinfo a{
+    color: #444444;
+}
+.mypage-body-list-body{
+    border-top: 1px solid #d8d8d8;
+}
+.mypage-body-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 16px 12px 94px;
+    width: 914px; height: 100%;
+}
+.info-group{
+    width: 441px; height: 278px;
+    margin: 16px 8px 0;
+    padding: 32px 29px 30px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #d8d8d8;
+    border-radius: 2px;
+}
+.info-group h2{
+    height: 22px;
+    padding-bottom: 2px;
+    font-size: 20px;
+    color: #333333;
+    font-weight: 900;
+}
+.mypage-info{
+    width: 389px; height: 140px;
+    padding-top: 9px;
+    box-sizing: border-box;
+}
+.mypage-btn-box{
+    width: 100%; height: 50px;
+    padding: 17px;
+    box-sizing: border-box;
+}
+.mypage-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px; height: 33px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 900;
+    border: 1px solid #b6b6b6;
+}
+.mypage-content{
+    display: flex;
+    width: 100%;
+    padding-bottom: 8px;
+}
+.mypage-content img{
+    width: 80px; height: 80px;
+    border-radius: 50%;
+}
+.mypage-name-info{
+    display: flex;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.mypage-name-info p{
+    font-size: 12px;
+    font-weight: 900;
+    color: #333333;
+}
+.mypage-name-info span{
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+.mypage-phone-email-info{
+    padding-top: 3px;
+}
+.phone-email-infobox{
+    display: flex;
+    align-items: center;
+}
+.phone-email-infobox span{
+    width: 156px; height: 20px;
+    font-size: 12px;
+    padding-top: 6px;
+    box-sizing: border-box;
+    color: #333333;
+    font-weight: 900;
+}
+.phone-email-infobox p{
+    font-size: 14px;
+    color: #666666;
+    padding-top: 10px;
+}
+.phone-email-infobox p:first-child{
+    padding: none;
+}
+.mypage-address{
+    width: 100%; height: 53px;
+    padding-top: 15px;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #666666;
+}
+.mypage-order-info{
+	margin-top: 10px;
+	font-size: 13px;
+    color: #333333;
+}
+.product-basket{
+	margin-top: 10px;
+	font-size: 13px;
+    color: #333333;
+}
+.password-msg{
+    height: 57px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #9b9b9b;
+}
+.password-guide{
+    display: flex;
+    padding-top: 17px;
+    margin-top: 80px;
+}
+.password-guide span{
+    width: 156px;
+    color: #333333;
+    margin-top: 3px;
+    font-size: 12px;
+    font-weight: 900;
+}
+.password-guide a{
+    font-size: 14px;
+    color: #336fc9;
+    text-decoration: underline;
+    font-weight: 900;
+}
+.admin-insert{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9b9b9b;
+    font-weight: 900;
+}
+.signout{
+    width: 100%; height: 29px;
+    color: #899197;
+    font-size: 12px;
+    padding: 15px 0 0 8px;
+    box-sizing: border-box;
+}
+.signout a{
+    height: 16px;
+    font-size: 12px;
+    color: #339900;
+    margin-left: 7px;
+    font-weight: 900;
+    text-decoration: underline;
+}

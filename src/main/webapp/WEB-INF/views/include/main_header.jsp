@@ -34,14 +34,15 @@
 							</c:when>
 							<c:otherwise>
 								<button onclick = "location.href ='/logout'" class="signout-btn">로그아웃</button>
-								<button class="user-another-nav-btn">
+								<button onclick = "location.href ='/mypage'" class="mypage-btn">마이페이지</button>
+								<!-- <button class="user-another-nav-btn">
 									<i class="fas fa-chevron-down"></i>
 									<ul class="user-another-nav">
 										<a onclick="">주문확인/배송조회<i class="fas fa-chevron-right"></i></a>
-										<a onclick="">마이페이지<i class="fas fa-chevron-right"></i></a>
 										<a onclick="">상품 찜<i class="fas fa-chevron-right"></i></a>
+										<a onclick="">개인정보수정<i class="fas fa-chevron-right"></i></a>
 									</ul>
-								</button>
+								</button> -->
 							</c:otherwise>
 						</c:choose>
 					</div>

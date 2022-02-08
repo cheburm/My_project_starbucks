@@ -1,0 +1,254 @@
+.container{
+}
+
+.mypage-header{
+    width: 100%; height: 95px;
+    background-color: #006633;
+    border-bottom: 1px solid #e1e1e1;
+}
+.mypage-banner{
+    display: flex;
+    align-items: center;
+    width: 914px; height: 55px;
+    margin: 0 auto;
+    color: white;
+}
+.mypage-banner h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+}
+.brand-name{
+    font-size: 16px;
+    font-weight: 900;
+}
+.mypage-msg{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.mypage-banner-msgbox{
+    width: 100%; height: 40px;
+    background-color: white;
+    border-top: #03381e;
+}
+.mypage-banner-msg{
+    display: flex;
+    align-items: center;
+    width: 914px; height: 40px;
+    margin: 0 auto;
+}
+.mypage-myinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 13px;
+    font-weight: 900;
+    margin-right: 15px;
+    border-bottom: 3px solid #006633;
+    box-sizing: border-box;
+}
+.mypage-myinfo a{
+    color: #006633;
+}
+.mypage-dtl-body{
+    width: 954px; height: 100%;
+    margin: 0 auto;
+}
+.mypage-dtl-content{
+    padding: 32px 51px 95px;
+}
+.mypage-dtl-banner{
+    width: 100%;
+    padding-bottom: 43px;
+}
+.mypage-dtl-guide{
+    height: 22px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #333333;
+}
+.mypage-dtl-guide-msg{
+    color: #666666;
+    font-size: 12px;
+    padding-top: 10px;
+}
+.mypage-dtl-content-box{
+    display: flex;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e1e1e1;
+}
+.mypage-dtl-content-box:last-child{
+    border-bottom: 1px solid #e1e1e1;
+
+}
+.mypage-modify-guide{
+    width: 23%;
+    border-right: 1px solid #e1e1e1;
+}
+.mypage-modify-guide-msg{
+    height: 78px;
+    padding: 32px 31px;
+    color: #333333;
+    font-size: 12px;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+.mypage-dtl-guide-msg span{
+    color: #08a660;
+    font-size: 14px;
+    font-weight: 900;
+}
+.mypage-modify-box{
+    width: 77%;
+    padding: 32px 0 32px 30px;
+    background-color: white;
+}
+.mypage-modify-box img{
+    width: 100px; height: 100px;
+    border-radius: 50%;
+}
+.profile-modify-btn{
+    display: flex;
+    padding-top: 21px;
+}
+.profile-modify-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px; height: 33px;
+    color: #333333;
+    font-size: 12px;
+    border: 1px solid #b1b1b1;
+    margin: 0 5px;
+    font-weight: 900;
+}
+.ip-name{
+    width: 263px; height: 29px;
+    margin-left: 8px;
+    padding-left: 7px;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+}
+.mypage-modify-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.mypage-modify-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px; height: 33px;
+    color: #333333;
+    background-color: white;
+    font-size: 12px;
+    font-weight: 900;
+    margin: 0 5px;
+    border: 1px solid #b1b1b1;
+}
+.mypage-dtl-myinfo{
+    height: 16px;
+    font-size: 14px;
+    color: #333333;
+}
+.mypage-dtl-info-guide{
+    height: 29px;
+    padding-top: 10px;
+    color: #8e8e8e;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1;
+}
+.mypage-dtl-modify-btn{
+    padding-top: 14px;
+    margin-left: 8px;
+}
+.mypage-dtl-modify-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 78px; height: 33px;
+    font-size: 12px;
+    color: #333333;
+    border: 1px solid #b1b1b1;
+}
+.password-modify-content{
+    width: 356px;
+    padding: 29px 32px;
+    margin: 0 auto;
+    border: 1px solid #e1e1e1;
+}
+.password-modify-guide{
+    height: 22px;
+    font-size: 20px;
+    color: #333333;
+    font-weight: 900;
+}
+.password-modify-guide-msg {
+    height: 19px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666666;
+}
+.password-modify-guide-msg span{
+    color: #336fc9;
+    text-decoration: underline;
+}
+.password-reference{
+    height: 19px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666666;
+}
+.password-reference span{
+    color: red;
+}
+.password-modify-ip {
+    display: flex;
+    flex-direction: column;
+    margin-top: 43px;
+}
+.password-ip{
+    width: 100%; height: 45px;
+    border: 1px solid #c5c5c5;
+    font-weight: 900;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.password-ip:last-child{
+    border-top: none;
+}
+.password-ip::placeholder{
+    color: #8e8e8e;
+}
+.password-old{
+    margin-bottom: 8px;
+}
+.password-modify-btn-box{
+    width: 100%; height: 102px;
+    margin-top: 31px;
+}
+.password-modify-btn-box button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; height: 47px;
+    font-size: 14px;
+    padding: 16px 0 15px;
+    font-weight: 900;
+}
+.password-form-btn{
+    background-color: #006633;
+    color: white;
+    border: 1px solid #08a660;
+}
+.password-cancle-btn{
+    background-color: white;
+    color: #333333;
+    margin-top: 8px;
+    border: 1px solid #c5c5c5;
+}

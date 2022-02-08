@@ -30,4 +30,18 @@ public class PageController {
 	public String productCategory() {
 		return "/products/product_list";
 	}
+	
+	@GetMapping("/mypage")
+	public String mypage() {
+		return "/mypage/mypage";
+	}
+	
+	@GetMapping("/mypage_dtl")
+	public String mypageDtl() {
+		return "/mypage/mypage_dtl";
+	}
+	@GetMapping("/mypage_product")
+	public String mypageProduct() {
+		return "/mypage/mypage_product";
+	}
 }
