@@ -2,6 +2,10 @@
     background-color: rgb(246, 246, 246);
 }
 
+.brand-name{
+	cursor: pointer;
+}
+
 .mypage-header{
     width: 100%; height: 95px;
     background-color: #006633;
@@ -203,6 +207,7 @@
     color: #336fc9;
     text-decoration: underline;
     font-weight: 900;
+    border: none;
 }
 .admin-insert{
     margin-top: 20px;

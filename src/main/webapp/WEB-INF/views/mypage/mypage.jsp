@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal" />
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -18,7 +24,7 @@
         <div class="mypage-header">
             <div class="mypage-banner">
                 <h1>
-                    <span class="brand-name">STARBUCKS</span>
+                    <span class="brand-name" onclick="location.href ='/index'">STARBUCKS</span>
                     <span class="mypage-msg">내정보</span>
                 </h1>
             </div>
@@ -35,15 +41,15 @@
                     <h2>스타벅스 프로필</h2>
                     <div class="mypage-info">
                         <div class="mypage-content">
-                            <img src="coffeImg/best1.png" alt="">
+                            <img src="/image/profile/${(empty principal.user.profile_img) ? ('baseImg.jpg') : (principal.user.id += '/' += principal.user.profile_img)}" alt="">
                             <div class="mypage-name-info">
                                 <p>별명</p>
-                                <span>서채범</span>
+                                <span>${principal.user.name }</span>
                             </div>
                         </div>
                     </div>
                     <div class="mypage-btn-box">
-                        <button class="mypage-btn">수정</button>
+                        <button class="mypage-btn" onclick="location.href='/mypage_dtl/profile'">수정</button>
                     </div>
                 </div>
                 <div class="name-profileimg-group info-group">
@@ -53,11 +59,11 @@
                             <div class="mypage-phone-email-info">
                                 <div class="phone-email-infobox">
                                     <span>연락처 이메일</span>
-                                    <p>coqja2013@naver.com</p>
+                                    <p>${principal.user.email }</p>
                                 </div>
                                 <div class="phone-email-infobox">
                                     <span>본인확인 이메일</span>
-                                    <p>coqja2013@naver.com</p>
+                                    <p>${principal.user.email }</p>
                                 </div>
                                 <div class="phone-email-infobox">
                                     <span>휴대전화</span>
@@ -67,7 +73,7 @@
                         </div>
                     </div>
                     <div class="mypage-btn-box">
-                        <button class="mypage-btn">수정</button>
+                        <button class="mypage-btn" onclick="location.href='/mypage_dtl/contact'">수정</button>
                     </div>
                 </div>
                 <div class="name-profileimg-group info-group">
@@ -93,7 +99,7 @@
                                 </span>
                                 <div class="password-guide">
                                     <span>비밀번호</span>
-                                    <a href="/mypage_dtl">변경하기</a>
+                                    <a href='/mypage_dtl/password' class="mypage-btn">변경하기</a>
                                 </div>
                             </div>
                         </div>

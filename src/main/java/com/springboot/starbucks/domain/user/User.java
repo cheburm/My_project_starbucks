@@ -19,6 +19,7 @@ public class User {
 	private String password;
 	private String name;
 	private String email;
+	private String profile_img;
 	private String provider;
 	private String role;
 	

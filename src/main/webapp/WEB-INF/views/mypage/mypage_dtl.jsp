@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal" />
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -11,14 +17,17 @@
     <title>스타벅스 내정보</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/mypage_dtl.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
 <body>
+    <input type="hidden" class="mypage-dtl-value" value="${mypageDtlType }">
+    <input type="hidden" name="user_id" value="${principal.user.id }">
     <div class="container">
         <div class="mypage-header">
             <div class="mypage-banner">
                 <h1>
-                    <span class="brand-name">STARBUCKS</span>
+                    <span class="brand-name" onclick="location.href ='/index'">STARBUCKS</span>
                     <span class="mypage-msg">내정보</span>
                 </h1>
             </div>
@@ -30,7 +39,8 @@
         </div>
         <div class="mypage-dtl-body">
             <div class="mypage-dtl-content">
-                <div class="profileimg-name-modify" style="display: none;">
+                <form class="profileimg-name-modify mypage-dtl-page" style="display: none">
+				    <input type="hidden" name="user_id" value="${principal.user.id }">
                     <div class="mypage-dtl-banner">
                         <h2 class="mypage-dtl-guide">프로필 수정</h2>
                         <p class="mypage-dtl-guide-msg">스타벅스 대표 프로필과 별명을 수정 하실 수 있습니다.</p>
@@ -43,10 +53,11 @@
                                 </div>
                             </div>
                             <div class="mypage-modify-box">
-                                <img src="/coffeImg/best1.png" alt="">
+                                <img src="/image/profile/${(empty principal.user.profile_img) ? ('baseImg.jpg') : (principal.user.id += '/' += principal.user.profile_img)}" alt="" class="profile-img">
                                 <div class="profile-modify-btn">
-                                    <button>사진변경</button>
-                                    <button>삭제</button>
+                                	<input type="file" name="profile_img" class="profile-file" onchange="profilePreView(this)" style="display: none">
+                                    <button type="button" onclick="document.all.profile_img.click()">사진변경</button>
+                                    <button type="button" class="profile-file-cancel">삭제</button>
                                 </div>
                             </div>
                         </div>
@@ -57,16 +68,16 @@
                                 </div>
                             </div>
                             <div class="mypage-modify-box">
-                                <input type="text" class="ip-name" name="name">
+                                <input type="text" class="ip-name" name="name" value="${principal.user.name }">
                             </div>
                         </div>
                     </div>
                     <div class="mypage-modify-btn">
-                        <button>적용</button>
-                        <button>취소</button>
+                        <button type="button" class="mypage-form-btn">적용</button>
+                        <button type="button" class="mypage-cancle-btn">취소</button>
                     </div>
-                </div>
-                <div class="phone-email-modify" style="display: none;">
+                </form>
+                <form class="phone-email-modify mypage-dtl-page" style="display: none">
                     <div class="mypage-dtl-banner">
                         <h2 class="mypage-dtl-guide">연락처 및 이메일 설정</h2>
                         <p class="mypage-dtl-guide-msg"><span>coqja2013</span>님의 연락처 정보입니다.<br>
@@ -108,11 +119,11 @@
                         </div>
                     </div>
                     <div class="mypage-modify-btn">
-                        <button>적용</button>
-                        <button>취소</button>
+                        <button type="submit" class="mypage-form-btn">적용</button>
+                        <button type="button" class="mypage-cancle-btn">취소</button>
                     </div>
-                </div>
-                <div class="password-modify" style="display: none;">
+                </form>
+                <form class="password-modify mypage-dtl-page" style="display: none">
                     <div class="password-modify-content">
                         <h2 class="password-modify-guide">비밀번호 변경</h2>
                         <p class="password-modify-guide-msg">
@@ -128,15 +139,14 @@
                             <input type="password" class="repassword-new password-ip" placeholder="새 비밀번호 확인">
                         </div>
                         <div class="password-modify-btn-box">
-                            <button class="password-form-btn">확인</button>
-                            <button class="password-cancle-btn">취소</button>
+                            <button type="submit" class="mypage-form-btn password-form-btn">확인</button>
+                            <button type="button" class="mypage-cancle-btn password-cancle-btn">취소</button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-    <script src="/js/mypage.js"></script>
     <script src="/js/mypage_dtl.js"></script>
 </body>
 
