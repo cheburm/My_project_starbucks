@@ -2,12 +2,14 @@ package com.springboot.starbucks.web.controller;
 
 import java.util.List;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.springboot.starbucks.config.auth.PrincipalDetails;
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewReqDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewRespDto;
@@ -58,6 +60,23 @@ public class ProductController {
 	@GetMapping("/totalReviewShow/{product_code}")
 	public List<ProductReviewRespDto> getProductReview(@PathVariable int product_code) {
 		return reviewService.getProductReview(product_code);
+	}
+	
+	@GetMapping("/product_order/{product_code}")
+	public String productOrder(@PathVariable int product_code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		int result = productService.productOrderUpload(product_code, principalDetails);
+		return Integer.toString(result);
+	}
+	
+	@GetMapping("/mypage_product_dtl/{mypageProductDtlType}")
+	public ModelAndView mypageProductDtl(@PathVariable String mypageProductDtlType, @AuthenticationPrincipal PrincipalDetails principalDetails) {
+		ModelAndView mav = new ModelAndView("/mypage/mypage_product_dtl");
+		mav.addObject("mypageProductDtlType", mypageProductDtlType);
+		if (mypageProductDtlType.equals("order_list")) {
+			mav.addObject("productOrderList", productService.getProductOrderList(principalDetails));
+		}
+		System.out.println(mav);
+		return mav;
 	}
 
 }

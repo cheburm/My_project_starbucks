@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.springboot.starbucks.web.dto.payment.ProductOrderReqDto;
+import com.springboot.starbucks.web.dto.payment.ProductOrderRespDto;
+
 @Mapper
 public interface ProductRepository {
 
@@ -25,4 +28,13 @@ public interface ProductRepository {
 	
 	// 상품리뷰 불러오기
 	public List<ProductDtl> getProductDtlByProductDtl(int product_code);
+	
+	// 상품코드로 상품불러오기
+	public Product getProductInfoByProductCode(int product_code);
+	
+	// 상품주문 리스트 인설트
+	public int insertOrderProduct(ProductOrderRespDto productOrderRespDto);
+	
+	// 상품주문 리스트 불러오기
+	public List<ProductOrderReqDto> getProductOrderListByUserId(int user_id);
 }

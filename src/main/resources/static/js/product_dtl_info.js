@@ -46,6 +46,7 @@ window.onload = () => {
 }
 
 function reviewView(data) {
+	var imgUrl;
 	var totalScore = '';
 	for (productReviewShow of data) {
 
@@ -61,11 +62,16 @@ function reviewView(data) {
 			totalScore = '★★★★★';
 		}
 
+		if (productReviewShow.profile_img == null) {
+			imgUrl = '/image/profile/baseImg.jpg';
+		} else {
+			imgUrl = '/image/profile/' + productReviewShow.user_id + '/' + productReviewShow.profile_img;
+		}
 		productReviewList.innerHTML += `
 	<div class="product-review">
         <div class="product-review-info">
             <div class="review-user-info">
-                <img src="/coffeImg/work.png" alt="">
+                <img src="${imgUrl}" >
                 <div class="review-upload">
                     <div class="product-review-score">${totalScore}<span>${productReviewShow.total_score}</span></div>
                     <div class="uload-info">
@@ -122,7 +128,7 @@ for (let i = 0; i < productBtns.length; i++) {
 /*결제 시스템*/
 const productBuy = document.querySelector('.product-buy');
 const userName = document.querySelector('.user-name');
-
+const payProductCode = document.querySelector('.pay-product-code');
 // console.log(window.IMP);
 var IMP = window.IMP;
 IMP.init("imp40436278"); // 관리자콘솔
@@ -145,15 +151,60 @@ productBuy.onclick = () => {
 	IMP.request_pay(IMP_paramObj,
 		function(rsp) { // callback
 			if (rsp.success) {
-				alert(rsp.success);
 				// 결제 성공
-				alert('결제되었습니다.감사합니다 사기당하셨습니다.');
+				let product_code = payProductCode.value;
+				productOrder(product_code);
+				alert('결제되었습니다.');
 			} else {
 				// 결제 실패
 				alert('결제에 실패했습니다. 에러내용 : ' + rsp.error_msg);
 			}
 		});
 }
+
+function productOrder(product_code) {
+	$.ajax({
+		type: 'get',
+		url: '/product_order/' + product_code,
+		success: function(data) {
+			if (confirm('주문 정보창으로 이동하시겠습니까?')) {
+				location.href = '/mypage_product_dtl/order_list';
+			}
+		},
+		error: function() {
+			alert('비동기 오류');
+		}
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -17,6 +17,7 @@ public class ProductDtl {
 	private int review_code;
 	private int user_id;
 	private String username;
+	private String profile_img;
 	private int product_code;
 	private int total_score;
 	private String review_write;

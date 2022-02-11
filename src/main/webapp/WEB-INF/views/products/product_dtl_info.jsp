@@ -20,6 +20,7 @@
 </head>
 <body>
     <div class="container">
+    <input type="hidden" value="${productDtl.product_code }" class="pay-product-code">
     <jsp:include page="../include/main_header.jsp"></jsp:include>
         <div class="product-dtl-container">
             <div class="product-dtl-body">

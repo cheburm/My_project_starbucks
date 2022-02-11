@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal" />
+</sec:authorize>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -14,18 +20,20 @@
 </head>
 
 <body>
+	<input type="hidden" class="user-id" value="${principal.user.id }">
+    <input type="hidden" class="mypage-product-dtl-value" value="${mypageProductDtlType }">
     <div class="container">
         <div class="mypage-header">
             <div class="mypage-banner">
                 <h1>
-                    <span class="brand-name">STARBUCKS</span>
+                    <span class="brand-name" onclick="location.href ='/index'">STARBUCKS</span>
                     <span class="mypage-msg">내정보</span>
                 </h1>
             </div>
             <div class="mypage-banner-msgbox">
                 <div class="mypage-banner-msg">
-                    <div class="mypage-myinfo"><a href="">회원정보</a></div>
-                    <div class="product-myinfo"><a href="">상품정보</a></div>
+                    <div class="mypage-myinfo"><a href="/mypage">회원정보</a></div>
+                    <div class="product-myinfo"><a href="/mypage_product">상품정보</a></div>
                 </div>
             </div>
         </div>
@@ -40,26 +48,28 @@
                         </p>
                     </div>
                     <div class="order-information-list">
-                        <div class="order-information-box">
-                            <div class="order-product-information">
-                                <img src="coffeImg/best1.png" alt="">
-                                <div class="order-product-info">
-                                    <p>스타벅스 머그컵</p>
-                                    <ul class="order-product-dtl-info">
-                                        <li class="order-product-price">150원</li>
-                                        <li class="order-product-date">2022.02.27</li>
-                                    </ul>
-                                    <span class="buy-success">결제완료</span>
-                                    <span class="buy-cancel">결제취소</span>
-                                    <div class="buy-success-msg">
-                                        구매가 완료되었습니다. 이용해주셔서 감사합니다.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="buy-cancel-btn">
-                                <button>주문 취소</button>
-                            </div>
-                        </div>
+                    	<c:forEach var="productOrder" items="${productOrderList }">
+	                        <div class="order-information-box">
+	                            <div class="order-product-information">
+	                                <img src="/image/products/${productOrder.product_img }" alt="">
+	                                <div class="order-product-info">
+	                                    <p>${productOrder.product_name }</p>
+	                                    <ul class="order-product-dtl-info">
+	                                        <li class="order-product-price">${productOrder.product_price }원</li>
+	                                        <li class="order-product-date">${productOrder.create_date }</li>
+	                                    </ul>
+	                                    <span class="buy-success">결제완료</span>
+	                                    <span class="buy-cancel" style="display: none">결제취소</span>
+	                                    <div class="buy-success-msg">
+	                                        구매가 완료되었습니다. 이용해주셔서 감사합니다.
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="buy-cancel-btn">
+	                                <button>주문 취소</button>
+	                            </div>
+	                        </div>
+                    	</c:forEach>
                     </div>
                 </div>
                 <div class="order-information-modify" style="display: none;">

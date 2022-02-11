@@ -18,7 +18,7 @@
         <div class="mypage-header">
             <div class="mypage-banner">
                 <h1>
-                    <span class="brand-name">STARBUCKS</span>
+                    <span class="brand-name" onclick="location.href ='/index'">STARBUCKS</span>
                     <span class="mypage-msg">내정보</span>
                 </h1>
             </div>
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="mypage-btn-box">
-                        <button class="mypage-btn">이동하기</button>
+                        <button class="mypage-btn" onclick="location.href='/mypage_product_dtl/order_list'">이동하기</button>
                     </div>
                 </div>
                 <div class="name-profileimg-group info-group">
@@ -58,14 +58,13 @@
                         </div>
                     </div>
                     <div class="mypage-btn-box">
-                        <button class="mypage-btn">이동하기</button>
+                        <button class="mypage-btn" onclick="location.href='/mypage_product_dtl/product_like'">이동하기</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script src="/js/mypage_product.js"></script>
-    <script src="/js/mypage_product_dtl.js"></script>
 </body>
 
 </html>

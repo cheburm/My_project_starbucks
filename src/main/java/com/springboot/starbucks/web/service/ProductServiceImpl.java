@@ -12,11 +12,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.springboot.starbucks.config.auth.PrincipalDetails;
 import com.springboot.starbucks.domain.admin.Product;
 import com.springboot.starbucks.domain.admin.ProductDtl;
 import com.springboot.starbucks.domain.admin.ProductRepository;
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
 import com.springboot.starbucks.web.dto.admin.ProductRespDto;
+import com.springboot.starbucks.web.dto.payment.ProductOrderReqDto;
+import com.springboot.starbucks.web.dto.payment.ProductOrderRespDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -100,6 +103,20 @@ public class ProductServiceImpl implements ProductService {
 	public Product getProductDtl(int product_code) {
 		Product productDtl = productRepository.getProductByProductDtl(product_code);
 		return productDtl;
+	}
+
+	@Override
+	public int productOrderUpload(int product_code, PrincipalDetails principalDetails) {
+		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code).toProductOrderEntity();
+		productOrderRespDto.setOrder_charge("결제완료");
+		productOrderRespDto.setUser_id(principalDetails.getUser().getId());
+		int result = productRepository.insertOrderProduct(productOrderRespDto);
+		return result;
+	}
+
+	@Override
+	public List<ProductOrderReqDto> getProductOrderList(PrincipalDetails principalDetails) {
+		return productRepository.getProductOrderListByUserId(principalDetails.getUser().getId());
 	}
 
 }

@@ -101,6 +101,7 @@ select
 	pr.product_code,
 	pr.user_id,
 	um.username,
+	um.profile_img,
 	pr.total_score,
 	pr.review_write,
 	pr.create_date,
@@ -111,6 +112,44 @@ from
 	LEFT OUTER JOIN user_mst um ON(um.id = pr.user_id)
 where
 	pr.product_code = #{product_code};
+</select>
+
+<select id="getProductInfoByProductCode" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.Product">
+select
+	product_code,
+	product_name,
+	product_price,
+	product_img
+from
+	product_info
+where
+	product_code = #{product_code};
+</select>
+
+<insert id="insertOrderProduct" parameterType="com.springboot.starbucks.web.dto.payment.ProductOrderRespDto">
+insert into
+	product_order_list
+values(
+	0,
+	#{user_id},
+	#{product_code},
+	#{order_charge},
+	now()
+);
+</insert>
+
+<select id="getProductOrderListByUserId" parameterType="Integer" resultType="com.springboot.starbucks.web.dto.payment.ProductOrderReqDto">
+select
+	pi.product_name,
+	pi.product_price,
+	pi.product_img,
+	pol.order_charge,
+	pol.create_date
+from
+	product_order_list pol
+	LEFT OUTER JOIN product_info pi ON(pol.product_code = pi.product_code)
+where
+	pol.user_id = #{user_id};
 </select>
 
 </mapper>

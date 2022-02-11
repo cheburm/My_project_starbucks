@@ -6,9 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
 public class PageController {
 
+	
 	@GetMapping({ "/", "/index" })
 	public String indexPage() {
 		return "index";
@@ -33,19 +36,22 @@ public class PageController {
 	public String productCategory() {
 		return "/products/product_list";
 	}
-	
+
 	@GetMapping("/mypage")
 	public String mypage() {
 		return "/mypage/mypage";
 	}
+
 	@GetMapping("/mypage_dtl/{mypageDtlType}")
 	public ModelAndView mypageDtl(@PathVariable String mypageDtlType) {
 		ModelAndView mav = new ModelAndView("/mypage/mypage_dtl");
 		mav.addObject("mypageDtlType", mypageDtlType);
 		return mav;
 	}
+
 	@GetMapping("/mypage_product")
 	public String mypageProduct() {
 		return "/mypage/mypage_product";
 	}
+
 }

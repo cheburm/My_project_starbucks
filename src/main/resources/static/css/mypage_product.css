@@ -2,6 +2,9 @@
     background-color: rgb(246, 246, 246);
 	height: 960px;
 }
+.brand-name{
+	cursor: pointer;
+}
 .mypage-header{
     width: 100%; height: 95px;
     background-color: #006633;
@@ -48,11 +51,10 @@
     font-size: 13px;
     font-weight: 900;
     margin-right: 15px;
-    border-bottom: 3px solid #006633;
     box-sizing: border-box;
 }
 .mypage-myinfo a{
-    color: #006633;
+    color: #444444;
 }
 .product-myinfo{
     display: flex;
@@ -63,9 +65,10 @@
     font-weight: 900;
     margin-right: 15px;
     box-sizing: border-box;
+    border-bottom: 3px solid #006633;
 }
 .product-myinfo a{
-    color: #444444;
+    color: #006633;
 }
 .mypage-body-list-body{
     border-top: 1px solid #d8d8d8;

@@ -1,211 +1,262 @@
-.container{
+.brand-name {
+	cursor: pointer;
 }
 
-.mypage-header{
-    width: 100%; height: 95px;
-    background-color: #006633;
-    border-bottom: 1px solid #e1e1e1;
+.mypage-header {
+	width: 100%;
+	height: 95px;
+	background-color: #006633;
+	border-bottom: 1px solid #e1e1e1;
 }
-.mypage-banner{
-    display: flex;
-    align-items: center;
-    width: 914px; height: 55px;
-    margin: 0 auto;
-    color: white;
-}
-.mypage-banner h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 24px;
-}
-.brand-name{
-    font-size: 16px;
-    font-weight: 900;
-}
-.mypage-msg{
-    margin-left: 10px;
-    font-size: 24px;
-    font-weight: 500;
-}
-.mypage-banner-msgbox{
-    width: 100%; height: 40px;
-    background-color: white;
-    border-top: #03381e;
-}
-.mypage-banner-msg{
-    display: flex;
-    align-items: center;
-    width: 914px; height: 40px;
-    margin: 0 auto;
-}
-.mypage-myinfo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 13px;
-    font-weight: 900;
-    margin-right: 15px;
-    border-bottom: 3px solid #006633;
-    box-sizing: border-box;
-}
-.mypage-myinfo a{
-    color: #006633;
-}
-.product-myinfo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    font-size: 13px;
-    font-weight: 900;
-    margin-right: 15px;
-    box-sizing: border-box;
-}
-.product-myinfo a{
-    color: #444444;
-}
-.mypage-dtl-body{
-    width: 954px; height: 100%;
-    margin: 0 auto;
-}
-.mypage-dtl-content{
-    padding: 32px 51px 95px;
-}
-.mypage-dtl-banner{
-    width: 100%;
-    padding-bottom: 43px;
-}
-.mypage-dtl-guide{
-    height: 22px;
-    font-size: 20px;
-    font-weight: 900;
-    color: #333333;
-}
-.mypage-dtl-guide-msg{
-    color: #666666;
-    font-size: 12px;
-    padding-top: 20px;
-}
-.order-information-box{
-    width: 100%; height: 208px;
-    padding: 23px 0 24px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e1e1e1;
-}
-.order-product-information{
-    width: 82%;
-    display: flex;
 
+.mypage-banner {
+	display: flex;
+	align-items: center;
+	width: 914px;
+	height: 55px;
+	margin: 0 auto;
+	color: white;
 }
-.order-product-information img{
-    width: 90px; height: 90px;
-    border: 1px solid #e1e1e1;
+
+.mypage-banner h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 24px;
 }
+
+.brand-name {
+	font-size: 16px;
+	font-weight: 900;
+}
+
+.mypage-msg {
+	margin-left: 10px;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.mypage-banner-msgbox {
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	border-top: #03381e;
+}
+
+.mypage-banner-msg {
+	display: flex;
+	align-items: center;
+	width: 914px;
+	height: 40px;
+	margin: 0 auto;
+}
+
+.mypage-myinfo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 13px;
+	font-weight: 900;
+	margin-right: 15px;
+	box-sizing: border-box;
+}
+
+.mypage-myinfo a {
+	color: #444444;
+}
+
+.product-myinfo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 13px;
+	font-weight: 900;
+	margin-right: 15px;
+	box-sizing: border-box;
+	border-bottom: 3px solid #006633;
+}
+
+.product-myinfo a {
+	color: #006633;
+}
+
+.mypage-dtl-body {
+	width: 954px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.mypage-dtl-content {
+	padding: 32px 51px 95px;
+}
+
+.mypage-dtl-banner {
+	width: 100%;
+	padding-bottom: 43px;
+}
+
+.mypage-dtl-guide {
+	height: 22px;
+	font-size: 20px;
+	font-weight: 900;
+	color: #333333;
+}
+
+.mypage-dtl-guide-msg {
+	color: #666666;
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+.order-information-box {
+	width: 100%;
+	height: 208px;
+	padding: 23px 0 24px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.order-product-information {
+	width: 82%;
+	display: flex;
+}
+
+.order-product-information img {
+	width: 90px;
+	height: 90px;
+	border: 1px solid #e1e1e1;
+}
+
 .order-product-info {
-    margin-left: 30px;
-}
-.order-product-info p{
-    font-size: 16px;
-}
-.order-product-dtl-info{
-    display: flex;
-    margin: 8px 0 12px;
-}
-.order-product-price{
-    font-size: 14px;
-    height: 18px;
-}
-.order-product-date{
-    height: 18px;
-    font-size: 14px;
-    color: #a5a5a5;
-    margin-left: 8px;
-    padding-left: 11px;
-    border-left: 1px solid #f0f0f0;
-}
-.buy-success{
-    font-size: 13px;
-    color: #a5a5a5;
-}
-.buy-cancel{
-    font-size: 13px;
-    color: red;
-}
-.buy-success-msg{
-    font-size: 13px;
-    margin-top: 10px;
-    padding-top: 10px;
-    color: #646465;
-}
-.buy-cancel-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 18%; height: 100%
-}
-.buy-cancel-btn button{
-    width: 110px; height: 29px;
-    color: #424242;
-    font-size: 13px;
-    background-color: white;
-    border: 1px solid #e1e1e1;
+	margin-left: 30px;
 }
 
-/* 찜한 상품 */
-.like-product-box{
-    display: flex;
-    width: 100%; height: 144px;
-    padding: 12px 0;
-    box-sizing: border-box;       
+.order-product-info p {
+	font-size: 16px;
 }
-.like-product-box img{
-    margin-left: 20px;
-    width: 120px; height: 120px;
-    border: 1px solid #e1e1e1;
+
+.order-product-dtl-info {
+	display: flex;
+	margin: 8px 0 12px;
 }
-.like-product-info{
-    width: 90%; height: 120px;
-    padding-left: 18px;
+
+.order-product-price {
+	font-size: 14px;
+	height: 18px;
 }
-.like-product-date{
-    margin-top: 10px;
-    width: 100%; height: 14px;
-    font-size: 12px;
-    color: #555555;
+
+.order-product-date {
+	height: 18px;
+	font-size: 14px;
+	color: #a5a5a5;
+	margin-left: 8px;
+	padding-left: 11px;
+	border-left: 1px solid #f0f0f0;
 }
-.like-product-name{
-    height: 19px;
-    font-size: 14px;
-    margin: 11px 0 4px;
-    color: #666666;
+
+.buy-success {
+	font-size: 13px;
+	color: #a5a5a5;
 }
-.like-product-price{
-    font-size: 14px;
-    height: 15px;
-    font-weight: 900;
+
+.buy-cancel {
+	font-size: 13px;
+	color: red;
 }
-.like-product-price span{
-    font-size: 12px;
+
+.buy-success-msg {
+	font-size: 13px;
+	margin-top: 10px;
+	padding-top: 10px;
+	color: #646465;
 }
-.like-product-brand-name{
-    height: 15px;
-    margin-top: 17px;
-    font-size: 13px;
-    color: #999999;
-    font-weight: 100;
+
+.buy-cancel-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 18%;
+	height: 100%
 }
-.like-product-close{
-    display: flex;
-    justify-content: center;
-    width: 10%;
+
+.buy-cancel-btn button {
+	width: 110px;
+	height: 29px;
+	color: #424242;
+	font-size: 13px;
+	background-color: white;
+	border: 1px solid #e1e1e1;
 }
-.like-product-close i{
-    width: 20px; height: 20px;
-    font-size: 20px;
-    color: #a5a5a5;
-    cursor: pointer;
+
+/* 李쒗븳 �긽�뭹 */
+.like-product-box {
+	display: flex;
+	width: 100%;
+	height: 144px;
+	padding: 12px 0;
+	box-sizing: border-box;
+}
+
+.like-product-box img {
+	margin-left: 20px;
+	width: 120px;
+	height: 120px;
+	border: 1px solid #e1e1e1;
+}
+
+.like-product-info {
+	width: 90%;
+	height: 120px;
+	padding-left: 18px;
+}
+
+.like-product-date {
+	margin-top: 10px;
+	width: 100%;
+	height: 14px;
+	font-size: 12px;
+	color: #555555;
+}
+
+.like-product-name {
+	height: 19px;
+	font-size: 14px;
+	margin: 11px 0 4px;
+	color: #666666;
+}
+
+.like-product-price {
+	font-size: 14px;
+	height: 15px;
+	font-weight: 900;
+}
+
+.like-product-price span {
+	font-size: 12px;
+}
+
+.like-product-brand-name {
+	height: 15px;
+	margin-top: 17px;
+	font-size: 13px;
+	color: #999999;
+	font-weight: 100;
+}
+
+.like-product-close {
+	display: flex;
+	justify-content: center;
+	width: 10%;
+}
+
+.like-product-close i {
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: #a5a5a5;
+	cursor: pointer;
 }

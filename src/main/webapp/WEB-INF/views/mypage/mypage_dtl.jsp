@@ -33,7 +33,8 @@
             </div>
             <div class="mypage-banner-msgbox">
                 <div class="mypage-banner-msg">
-                    <div class="mypage-myinfo"><a href="">회원정보</a></div>
+                    <div class="mypage-myinfo"><a href="/mypage">회원정보</a></div>
+                    <div class="product-myinfo"><a href="/mypage_product">상품정보</a></div>
                 </div>
             </div>
         </div>

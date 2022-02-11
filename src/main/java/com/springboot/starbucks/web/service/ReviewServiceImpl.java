@@ -94,6 +94,7 @@ public class ReviewServiceImpl implements ReviewService {
 														.product_code(productDtl.getProduct_code())
 														.user_id(productDtl.getUser_id())
 														.username(productDtl.getUsername())
+														.profile_img(productDtl.getProfile_img())
 														.total_score(productDtl.getTotal_score())
 														.review_write(productDtl.getReview_write())
 														.create_date(productDtl.getCreate_date().toLocalDate())
