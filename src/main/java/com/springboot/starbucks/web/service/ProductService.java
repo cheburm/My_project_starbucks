@@ -16,4 +16,7 @@ public interface ProductService{
 	
 	public int productOrderUpload(int product_code, PrincipalDetails principalDetails);
 	public List<ProductOrderReqDto> getProductOrderList(PrincipalDetails principalDetails);
+	
+	public ProductRespDto getProductScoreAndReview(int product_code); 
+	
 }

@@ -29,9 +29,9 @@
                         <img src="/image/products/${productDtl.product_img }" class="product-img">
                         <div class="product-reaction">
                             <p>리뷰수</p>
-                            <strong>435</strong>
+                            <strong>${reviewAndScore.total_review }</strong>
                             <p>ㆍ 사용자 총 평점</p>
-                            <strong>4.9</strong>/
+                            <strong>${reviewAndScore.total_score }</strong>/
                             <strong>5</strong>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
             </div>
             <div class="product-review-body" style="display: none">
                 <div class="review-nav">
-                    <strong>리뷰 <div>500</div>건</strong>
+                    <strong>리뷰 <div>${reviewAndScore.total_review }</div>건</strong>
                     <div class="review-write-page-box">
                         <a href="/review/${productDtl.product_code }" target="_blank" class="review-page">리뷰작성하러가기</a>
                     </div>

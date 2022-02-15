@@ -11,4 +11,7 @@ public class ProductRespDto {
 
 	private List<Product> productList;
 	private String productCategoryName;
+	
+	private double total_score;
+	private int total_review;
 }

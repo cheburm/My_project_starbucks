@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.starbucks.config.auth.PrincipalDetails;
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
+import com.springboot.starbucks.web.dto.admin.ProductRespDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewReqDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewRespDto;
 import com.springboot.starbucks.web.service.ProductService;
@@ -42,6 +43,7 @@ public class ProductController {
 	public ModelAndView productDtlPage(@PathVariable int product_code) {
 		ModelAndView mav = new ModelAndView("/products/product_dtl_info");
 		mav.addObject("productDtl", productService.getProductDtl(product_code));
+		mav.addObject("reviewAndScore",productService.getProductScoreAndReview(product_code));
 		return mav;
 	}
 

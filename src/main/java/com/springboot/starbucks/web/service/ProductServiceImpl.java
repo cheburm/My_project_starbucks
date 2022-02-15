@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
 				productReqDto.getProduct_introduction_img().getOriginalFilename() };
 		String adminFolder;
 		Product productEntity = productReqDto.toProductEntity();
-		
+
 		for (int i = 0; i < productFile.length; i++) {
 			String originFileName = productFile[i];
 			String originFileExtension = originFileName.substring(originFileName.lastIndexOf("."));
@@ -54,7 +54,7 @@ public class ProductServiceImpl implements ProductService {
 			if (!productImgFile.exists()) {
 				productImgFile.mkdirs();
 			}
-			
+
 			if (i == 0) {
 				try {
 					productReqDto.getProduct_img().transferTo(productImgFile);
@@ -107,7 +107,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public int productOrderUpload(int product_code, PrincipalDetails principalDetails) {
-		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code).toProductOrderEntity();
+		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code)
+				.toProductOrderEntity();
 		productOrderRespDto.setOrder_charge("결제완료");
 		productOrderRespDto.setUser_id(principalDetails.getUser().getId());
 		int result = productRepository.insertOrderProduct(productOrderRespDto);
@@ -117,6 +118,28 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<ProductOrderReqDto> getProductOrderList(PrincipalDetails principalDetails) {
 		return productRepository.getProductOrderListByUserId(principalDetails.getUser().getId());
+	}
+
+	@Override
+	public ProductRespDto getProductScoreAndReview(int product_code) {
+		ProductRespDto productRespDto = new ProductRespDto();
+		int totalReview = 0;
+		double totalScore = 0;
+		double totalAddScore = 0;
+		List<Integer> scoreAndReview = productRepository.getProductReviewByProductCode(product_code);
+		if (scoreAndReview.indexOf(null) == -1) {
+			for (int reviewSore : scoreAndReview) {
+				++totalReview;
+				totalAddScore += reviewSore;
+			}
+			totalScore = totalAddScore / totalReview;
+		}
+
+
+		productRespDto.setTotal_review(totalReview);
+		productRespDto.setTotal_score(totalScore);
+
+		return productRespDto;
 	}
 
 }

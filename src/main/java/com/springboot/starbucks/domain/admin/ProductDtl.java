@@ -23,6 +23,8 @@ public class ProductDtl {
 	private String review_write;
 	private List<String> review_files;
 	private String review_file;
+	private List<Integer> total_scores;
+	
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;
 }
