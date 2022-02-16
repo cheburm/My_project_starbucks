@@ -3,6 +3,7 @@ package com.springboot.starbucks.domain.admin;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.springboot.starbucks.web.dto.admin.ProductRespDto;
 import com.springboot.starbucks.web.dto.payment.ProductOrderRespDto;
 
 import lombok.AllArgsConstructor;
@@ -23,6 +24,8 @@ public class Product {
 	private List<String> product_categoryNames;
 	private String product_categoryName;
 	private String product_introduction_img;
+	private int total_review;
+	private double total_score;
 	
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

@@ -24,6 +24,8 @@ public class ProductDtl {
 	private List<String> review_files;
 	private String review_file;
 	private List<Integer> total_scores;
+	private int product_total_review;
+	private double product_total_score;
 	
 	private LocalDateTime create_date;
 	private LocalDateTime update_date;

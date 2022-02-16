@@ -56,7 +56,8 @@ public class ProductController {
 
 	@PostMapping("/review-insert")
 	public String productReviewUpload(ProductReviewReqDto productReviewReqDto) {
-		return Integer.toString(reviewService.productReviewUpload(productReviewReqDto));
+		String result = Integer.toString(reviewService.productReviewUpload(productReviewReqDto));
+		return result;
 	}
 	
 	@GetMapping("/totalReviewShow/{product_code}")

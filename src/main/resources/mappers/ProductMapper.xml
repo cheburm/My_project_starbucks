@@ -11,10 +11,13 @@
 		product_categoryName,
 		product_name,
 		product_price,
-		product_img
+		product_img,
+		pdi.total_review,
+		pdi.total_score
 	from
 		product_categorys pc
 		LEFT outer join product_info pi on(pi.product_code = pc.product_code)
+		LEFT OUTER JOIN productdtl_info pdi ON(pdi.product_code = pi.product_code)
 	where
 		pc.product_categoryName = #{productCategoryName};
 </select>
@@ -25,10 +28,13 @@
 		product_categoryName,
 		product_name,
 		product_price,
-		product_img
+		product_img,
+		pdi.total_review,
+		pdi.total_score
 	from
 		product_categorys pc
 		LEFT outer join product_info pi on(pi.product_code = pc.product_code)
+		LEFT OUTER JOIN productdtl_info pdi ON(pdi.product_code = pi.product_code)
 	group by 
 		product_name;
 </select>
@@ -43,16 +49,6 @@
 	from
 		product_info pi
 		LEFT OUTER JOIN productdtl_info pdi ON(pi.product_code = pdi.product_code)
-	where
-		pi.product_code = #{product_code};
-</select>
-
-<select id="getProductReviewByProductCode" parameterType="Integer" resultType="Integer">
-	select
-		pr.total_score
-	from
-		product_info pi
-		LEFT OUTER JOIN product_review pr ON(pi.product_code = pr.product_code)
 	where
 		pi.product_code = #{product_code};
 </select>
@@ -104,6 +100,26 @@
 ;
 </insert>
 
+<select id="getProductDtlInfoByProductDtl" parameterType="Integer" resultType="Integer">
+select
+	pr.total_score
+from
+	product_info pi
+	LEFT OUTER JOIN product_review pr ON(pi.product_code = pr.product_code)
+where
+	pi.product_code = #{product_code};
+</select>
+
+<update id="updateProductDtlInfoByProductDtl" parameterType="com.springboot.starbucks.domain.admin.ProductDtl">
+update
+	productdtl_info
+set
+	total_review = #{product_total_review},
+	total_score = #{product_total_score}
+where
+	product_code = #{product_code};
+</update>
+
 
 <select id="getProductDtlByProductDtl" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.ProductDtl">
 select
@@ -124,7 +140,7 @@ where
 	pr.product_code = #{product_code};
 </select>
 
-<select id="getProductInfoByProductCode" parameterType="Integer" resultType="com.springboot.starbucks.domain.admin.Product">
+<select id="getProductInfoByProductCode" parameterType="Integer" resultType="Integer">
 select
 	product_code,
 	product_name,
@@ -160,6 +176,26 @@ from
 	LEFT OUTER JOIN product_info pi ON(pol.product_code = pi.product_code)
 where
 	pol.user_id = #{user_id};
+</select>
+
+<update id="updateProductReviewAndScore" parameterType="Integer">
+	update
+		productdtl_info
+	set
+		total_review = #{total_review},
+		total_score = #{total_score}
+	where
+		product_code = #{product_code};
+</update>
+
+<select id="getProductReviewByProductCode" parameterType="Integer" resultType="com.springboot.starbucks.web.dto.admin.ProductRespDto">
+	select
+		total_review,
+		total_score
+	from
+		productdtl_info
+	where
+		product_code = #{product_code};
 </select>
 
 </mapper>

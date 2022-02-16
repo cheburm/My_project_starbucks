@@ -112,6 +112,9 @@ function imgDelete() {
 		}
 	}
 }
+
+const productCode = document.querySelector('.product-code');
+
 reviewUploadBtn.onclick = () => {
 	fileListAsArray.forEach(file => { dataTransfer.items.add(file); });
 	reviewPhotoOnload.files = dataTransfer.files;

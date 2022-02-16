@@ -122,24 +122,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public ProductRespDto getProductScoreAndReview(int product_code) {
-		ProductRespDto productRespDto = new ProductRespDto();
-		int totalReview = 0;
-		double totalScore = 0;
-		double totalAddScore = 0;
-		List<Integer> scoreAndReview = productRepository.getProductReviewByProductCode(product_code);
-		if (scoreAndReview.indexOf(null) == -1) {
-			for (int reviewSore : scoreAndReview) {
-				++totalReview;
-				totalAddScore += reviewSore;
-			}
-			totalScore = totalAddScore / totalReview;
-		}
-
-
-		productRespDto.setTotal_review(totalReview);
-		productRespDto.setTotal_score(totalScore);
-
-		return productRespDto;
+		return productRepository.getProductReviewByProductCode(product_code);
 	}
 
 }

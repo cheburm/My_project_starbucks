@@ -81,7 +81,7 @@
                         <div class="product-name"><strong>${product.product_name }</strong></div>
                         <strong class="product-price"><span>${product.product_price }</span>원</strong>
                     </a>
-                    <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
+                    <div class="product-score">평점 <span>${product.total_score }</span> · 리뷰 <span>${product.total_review }</span></div>
                 </div>
             </c:forEach>
             </div>

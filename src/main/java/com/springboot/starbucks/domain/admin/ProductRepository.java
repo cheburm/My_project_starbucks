@@ -27,6 +27,11 @@ public interface ProductRepository {
 	// 상품리뷰 인설트
 	public int insertProductReview(ProductDtl productDtl);
 	
+	// 상품리뷰 인설트후 총리뷰수 총점수 불러오기
+	public List<Integer> getProductDtlInfoByProductDtl(int product_code);
+	// 상품리뷰 인설트후 총리뷰수 총점수 업데이트
+	public int updateProductDtlInfoByProductDtl(ProductDtl productDtl);
+	
 	// 상품리뷰 불러오기
 	public List<ProductDtl> getProductDtlByProductDtl(int product_code);
 	
@@ -39,6 +44,7 @@ public interface ProductRepository {
 	// 상품주문 리스트 불러오기
 	public List<ProductOrderReqDto> getProductOrderListByUserId(int user_id);
 	
-	// 상품 토탈리뷰개수 가져오기
-	public List<Integer> getProductReviewByProductCode(int product_code);
+	// 상품디테일 페이지 토탈리뷰개수 가져오기
+	public ProductRespDto getProductReviewByProductCode(int product_code);
+	
 }

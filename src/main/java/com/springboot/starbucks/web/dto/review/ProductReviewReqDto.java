@@ -4,11 +4,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.starbucks.domain.admin.ProductDtl;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProductReviewReqDto {
 
 	private int product_code;
@@ -17,6 +21,8 @@ public class ProductReviewReqDto {
 	private int total_score;
 	private String review_write;
 	private MultipartFile[] review_files;
+	private double product_total_score;
+	private int product_total_review;
 	
 	public ProductDtl toDtlEntity() {
 		return ProductDtl.builder()
@@ -26,4 +32,5 @@ public class ProductReviewReqDto {
 				.review_write(review_write)
 				.build();
 	}
+
 }

@@ -86,7 +86,7 @@
 	                </div>
 	            </div>
 	            <input type="hidden" value="${principal.user.id }" name="user_id">
-	            <input type="hidden" value="${product.product_code }" name="product_code">
+	            <input type="hidden" class="product-code" value="${product.product_code }" name="product_code" >
 	            <input type="hidden" value="${product.product_name }" name="product_name">
 	        </form>
         </div>
