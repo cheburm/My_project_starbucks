@@ -18,6 +18,12 @@ public interface ProductRepository {
 	// 모든상품 리스트 불러오기
 	public List<Product> getProductByProductCategoryAll(String productCategoryName);
 	
+	// 무료배송 카테고리별 상품리스트 불러오기
+	public List<Product> getProductByFreeShippingProductCategoryName(String productCategoryName);
+	
+	// 무료배송 모든상품 리스트 불러오기
+	public List<Product> getProductByFreeShippingProductCategoryAll(String productCategoryName);
+	
 	// 상품 상세정보 불러오기
 	public Product getProductByProductDtl(int product_code);
 	

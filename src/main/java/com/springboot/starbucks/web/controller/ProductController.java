@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.springboot.starbucks.config.auth.PrincipalDetails;
+import com.springboot.starbucks.domain.admin.Product;
 import com.springboot.starbucks.web.dto.admin.ProductReqDto;
 import com.springboot.starbucks.web.dto.admin.ProductRespDto;
 import com.springboot.starbucks.web.dto.review.ProductReviewReqDto;
@@ -37,6 +38,11 @@ public class ProductController {
 		ModelAndView mav = new ModelAndView("/products/product_list");
 		mav.addObject("product", productService.getProductList(productCategoryName));
 		return mav;
+	}
+	
+	@GetMapping("/category/{productCategoryName}/{freeShippingFlag}")
+	public List<Product> freeShippingProductList(@PathVariable String productCategoryName,@PathVariable boolean freeShippingFlag) {
+		return productService.getFreeShippingProductList(productCategoryName, freeShippingFlag);
 	}
 
 	@GetMapping("/product/{product_code}")
@@ -68,6 +74,7 @@ public class ProductController {
 	@GetMapping("/product_order/{product_code}")
 	public String productOrder(@PathVariable int product_code, @AuthenticationPrincipal PrincipalDetails principalDetails) {
 		int result = productService.productOrderUpload(product_code, principalDetails);
+		System.out.println(result);
 		return Integer.toString(result);
 	}
 	

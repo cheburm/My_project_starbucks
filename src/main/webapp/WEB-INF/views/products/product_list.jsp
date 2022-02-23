@@ -23,9 +23,10 @@
         <div class="product-list-container">
             <div class="product-nav">
                 <div class="product-info">
-                    <span class="product-kind-name">${product.productCategoryName }</span>
+                	<input type="hidden" class="category-name" value="${product.productCategoryNameEng }">
+                    <span class="product-kind-name">${product.productCategoryNameKor }</span>
                     <button class="product-kind-view" type="button">
-                        <span>${product.productCategoryName }</span>(총 <span>01</span>개)
+                        <span>${product.productCategoryNameKor }</span>(총 <span>01</span>개)
                         <i class="fas fa-sort-down"></i>
                         <ul class="product-kind-list">
                             <li>텀블러</li>
@@ -49,17 +50,19 @@
                         <li>평점높은순</li>
                     </ul>
                     <div class="product-view-info-num">
-	                        <a href="../admin/admin_product_upload" class="admin-product-upload">
-	                            상품등록
-	                        </a>
-                        <button class="free-shipping">
-                            <span>무료배송</span>
-                            <div class="switch-on-off">
-                                <div class="switch-control"></div>
-                                <p class="switch-on">on</p>
-                                <p class="switch-off">off</p>
-                            </div>
-                        </button>
+							<c:if test="${principal.user.role eq 'ROLE_ADMIN' }">
+		                        <a href="/admin/admin_product_upload" class="admin-product-upload">
+		                            상품등록
+		                        </a>
+							</c:if>
+	                        <button class="free-shipping">
+	                            <span>무료배송</span>
+	                            <div class="switch-on-off" style="backgroundColor = '#c8ccd5'">
+	                                <div class="switch-control" style="left = '0'"></div>
+	                                <p class="switch-on">on</p>
+	                                <p class="switch-off">off</p>
+	                            </div>
+	                        </button>
                         <button class="product-number-view" type="button">
                             <span>20</span>개씩 보기
                             <i class="fas fa-sort-down"></i>

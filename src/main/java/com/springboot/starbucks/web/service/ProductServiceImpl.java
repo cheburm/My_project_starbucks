@@ -88,15 +88,48 @@ public class ProductServiceImpl implements ProductService {
 
 		ProductRespDto productRespDto = new ProductRespDto();
 		List<Product> productListAll = null;
+
 		if (productCategoryName.equals("productAll")) {
 			productListAll = (productRepository.getProductByProductCategoryAll(map.get(productCategoryName)));
 		} else {
 			productListAll = (productRepository.getProductByProductCategoryName(map.get(productCategoryName)));
 		}
 		productRespDto.setProductList(productListAll);
-		productRespDto.setProductCategoryName(map.get(productCategoryName));
+		productRespDto.setProductCategoryNameKor(map.get(productCategoryName));
+		productRespDto.setProductCategoryNameEng(productCategoryName);
 
 		return productRespDto;
+	}
+
+	@Override
+	public List<Product> getFreeShippingProductList(String productCategoryName, boolean freeShippingFlag) {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("tumbler", "텀블러");
+		map.put("coldCup", "콜드컵");
+		map.put("thermos", "보온병");
+		map.put("waterBottle", "워터보틀");
+		map.put("mugAndCup", "머그컵");
+		map.put("lifeStyle", "라이프스타일");
+		map.put("teaAndCoffeeSupplie", "커피용품");
+		map.put("productAll", "전체상품");
+
+		List<Product> productListAll = null;
+
+		if (freeShippingFlag == true) {
+			if (productCategoryName.equals("productAll")) {
+				productListAll = (productRepository.getProductByFreeShippingProductCategoryAll(map.get(productCategoryName)));
+			} else {
+				productListAll = (productRepository.getProductByFreeShippingProductCategoryName(map.get(productCategoryName)));
+			}
+		} else {
+			if (productCategoryName.equals("productAll")) {
+				productListAll = (productRepository.getProductByProductCategoryAll(map.get(productCategoryName)));
+			} else {
+				productListAll = (productRepository.getProductByProductCategoryName(map.get(productCategoryName)));
+			}
+		}
+
+		return productListAll;
 	}
 
 	@Override
@@ -107,8 +140,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public int productOrderUpload(int product_code, PrincipalDetails principalDetails) {
-		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code)
-				.toProductOrderEntity();
+		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code).toProductOrderEntity();
+		System.out.println(productOrderRespDto);
 		productOrderRespDto.setOrder_charge("결제완료");
 		productOrderRespDto.setUser_id(principalDetails.getUser().getId());
 		int result = productRepository.insertOrderProduct(productOrderRespDto);

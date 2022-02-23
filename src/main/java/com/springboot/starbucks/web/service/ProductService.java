@@ -12,6 +12,7 @@ public interface ProductService{
 
 	public void productUpload(ProductReqDto productReqDto);
 	public ProductRespDto getProductList(String productCategoryName);
+	public List<Product> getFreeShippingProductList(String productCategoryName,boolean freeShippingFlag);
 	public Product getProductDtl(int product_code);
 	
 	public int productOrderUpload(int product_code, PrincipalDetails principalDetails);

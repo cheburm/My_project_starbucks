@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 public class ProductRespDto {
 
 	private List<Product> productList;
-	private String productCategoryName;
+	private String productCategoryNameKor;
+	private String productCategoryNameEng;
 	
 	private int total_review;
 	private double total_score;

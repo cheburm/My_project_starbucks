@@ -68,14 +68,17 @@
 						<li><a class="category">라이프스타일</a></li>
 						<li><a class="category">커피용품</a></li>
 						<li><a class="category">전체상품</a></li>
-						<li class="recommend-list-btn"><a href="">추천상품 <i
-								class="fas fa-chevron-down"></i></a>
+						<li class="recommend-list-btn">
+							<a href="">추천상품
+								<i class="fas fa-chevron-down"></i>
+							</a>
 							<ul class="recommend-list">
 								<a href="/products/product_lists">22 new year</a>
 								<a href="/products/product_lists">home</a>
 								<a href="/products/product_lists">On-the-Go</a>
 								<a href="/products/product_lists">Work</a>
-							</ul></li>
+							</ul>
+						</li>
 						<li><a href="" style="color: #888888;">묻고 답하기</a></li>
 						<li><a href="" style="color: #888888;">공지사항</a></li>
 					</ul>
