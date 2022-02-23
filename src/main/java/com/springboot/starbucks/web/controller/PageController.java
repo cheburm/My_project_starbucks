@@ -12,11 +12,6 @@ import lombok.RequiredArgsConstructor;
 public class PageController {
 
 	
-	@GetMapping({ "/", "/index" })
-	public String indexPage() {
-		return "index";
-	}
-
 	@GetMapping("/auth/signin")
 	public String signinPage() {
 		return "auth/signin";

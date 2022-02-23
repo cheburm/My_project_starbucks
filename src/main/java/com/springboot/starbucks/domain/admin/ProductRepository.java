@@ -1,5 +1,6 @@
 package com.springboot.starbucks.domain.admin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -10,6 +11,14 @@ import com.springboot.starbucks.web.dto.payment.ProductOrderRespDto;
 
 @Mapper
 public interface ProductRepository {
+	
+	// 인덱스 페이지 구매순위로 상품코드만 받아오기
+	public int[] getIndexByBestProductCode();
+	// 상품코드로 상품정보들을 불러오기
+	public Product getIndexByBestProductList(int product_code);
+	
+	// 인덱스 페이지 모든상품 리스트 불러오기
+	public List<Product> getIndexByProductAll();
 
 	public int insertProduct(Product product);
 	// 카테고리별 상품리스트 불러오기

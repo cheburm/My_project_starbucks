@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
     
 <!DOCTYPE html>
 <html lang="ko">
@@ -42,46 +44,19 @@
                 <div class="product">
                     <span class="product-text">베스트 상품</span>
                     <ul class="best-product-list">
+                    <c:forEach var="bestProduct" items="${bestProduct }">
                         <li class="best-product">
-                            <a href="" class="best-product-img"><img src="coffeImg/best1.png"></a>
-                            <a href="" class="best-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
+                    	<label class="best-num-text"></label>
+                            <a href="/product/${bestProduct.product_code }" class="best-product-img"><img src="/image/products/${bestProduct.product_img }"></a>
+                            <a href="/product/${bestProduct.product_code }" class="best-product-info">
+                                <div class="product-price">${bestProduct.product_price }<span>원</span></div>
+                                <div class="product-name"><span>${bestProduct.product_name }</span></div>
+                                <div class="product-score">평점 <span>${bestProduct.total_score }</span> · 리뷰 <span>${bestProduct.total_review }</span></div>
                                 <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
+                                <!-- <div class="sold-out"><p>SOLDOUT</p></div> -->
                             </a>
                         </li>
-                        <li class="best-product">
-                            <a href="" class="best-product-img"><img src="coffeImg/best2.png"></a>
-                            <a href="" class="best-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="best-product">
-                            <a href="" class="best-product-img"><img src="coffeImg/best3.png"></a>
-                            <a href="" class="best-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="best-product">
-                            <a href="" class="best-product-img"><img src="coffeImg/best4.png"></a>
-                            <a href="" class="best-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
+                    </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -101,66 +76,20 @@
                         </ul>
                     </div>
                     <ul class="all-product-list">
-                        <li class="all-product">
-                            <a href="" class="all-product-img">
-                                <img src="coffeImg/best1.png">
-                            </a>
-                            <a href="" class="all-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="all-product">
-                            <a href="" class="all-product-img">
-                                <img src="coffeImg/best2.png">
-                            </a>
-                            <a href="" class="all-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="all-product">
-                            <a href="" class="all-product-img">
-                                <img src="coffeImg/best3.png">
-                            </a>
-                            <a href="" class="all-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="all-product">
-                            <a href="" class="all-product-img">
-                                <img src="coffeImg/best4.png">
-                            </a>
-                            <a href="" class="all-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
-                        <li class="all-product">
-                            <a href="" class="all-product-img">
-                                <img src="coffeImg/best4.png">
-                            </a>
-                            <a href="" class="all-product-info">
-                                <div class="product-price">111,111<span>원</span></div>
-                                <div class="product-name"><span>그린 사이렌 도트 머그 237ml</span></div>
-                                <div class="product-score">평점 <span>5.0</span> · 리뷰 <span>655</span></div>
-                                <div class="brand-name">스타벅스</div>
-                                <div class="sold-out"><p>SOLDOUT</p></div>
-                            </a>
-                        </li>
+                   		<c:forEach var="product" items="${productAll }">
+	                        <li class="all-product">
+	                            <a href="/product/${product.product_code }" class="all-product-img">
+	                                <img src="/image/products/${product.product_img }">
+	                            </a>
+	                            <a href="/product/${product.product_code }" class="all-product-info">
+	                                <div class="product-price">${product.product_price }<span>원</span></div>
+	                                <div class="product-name"><span>${product.product_name }</span></div>
+	                                <div class="product-score">평점 <span>${product.total_score }</span> · 리뷰 <span>${product.total_review }</span></div>
+	                                <div class="brand-name">스타벅스</div>
+	                                <!-- <div class="sold-out"><p>SOLDOUT</p></div> -->
+	                            </a>
+	                        </li>
+                   		</c:forEach>
                     </ul>
                 </div>
             </div>
@@ -180,6 +109,7 @@
         <jsp:include page="./include/main_footer.jsp"></jsp:include>
     </div>
     <script src="/js/main_header.js"></script>
+    <script src="/js/index.js"></script>
     <script src="https://kit.fontawesome.com/7e652321d1.js" crossorigin="anonymous"></script>
 </body>
 </html>

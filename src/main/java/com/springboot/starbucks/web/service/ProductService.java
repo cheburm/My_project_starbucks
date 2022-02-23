@@ -10,6 +10,8 @@ import com.springboot.starbucks.web.dto.payment.ProductOrderReqDto;
 
 public interface ProductService{
 
+	public List<Product> getIndexBestProductList();
+	public List<Product> getIndexProductAllList();
 	public void productUpload(ProductReqDto productReqDto);
 	public ProductRespDto getProductList(String productCategoryName);
 	public List<Product> getFreeShippingProductList(String productCategoryName,boolean freeShippingFlag);

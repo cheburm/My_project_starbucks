@@ -27,6 +27,14 @@ public class ProductController {
 	private final ProductService productService;
 	private final ReviewService reviewService;
 
+	@GetMapping({ "/", "/index" })
+	public ModelAndView indexPage() {
+		ModelAndView mav = new ModelAndView("/index");
+		mav.addObject("productAll", productService.getIndexProductAllList());
+		mav.addObject("bestProduct",productService.getIndexBestProductList());
+		return mav;
+	}
+	
 	@PostMapping("/admin/productUpload")
 	public String productUpload(ProductReqDto productReqDto) {
 		productService.productUpload(productReqDto);

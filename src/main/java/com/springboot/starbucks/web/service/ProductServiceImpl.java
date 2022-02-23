@@ -33,6 +33,24 @@ public class ProductServiceImpl implements ProductService {
 	private final ProductRepository productRepository;
 
 	@Override
+	public List<Product> getIndexBestProductList() {
+		int bestProductListNum = 4;
+		ArrayList<Product> bestProductList = new ArrayList<Product>();
+		int productCode[] = productRepository.getIndexByBestProductCode();
+			for (int i = 0; i < productCode.length && i < bestProductListNum; i++) {
+				bestProductList.add(productRepository.getIndexByBestProductList(productCode[i]));
+			}
+			System.out.println(bestProductList);
+		return bestProductList;
+	}
+	
+	@Override
+	public List<Product> getIndexProductAllList() {
+		List<Product> indexProduct = productRepository.getIndexByProductAll();
+		return indexProduct;
+	}
+	
+	@Override
 	public void productUpload(ProductReqDto productReqDto) {
 		String productFile[] = { productReqDto.getProduct_img().getOriginalFilename(),
 				productReqDto.getProduct_introduction_img().getOriginalFilename() };

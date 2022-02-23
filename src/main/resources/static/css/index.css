@@ -61,6 +61,20 @@
 
 .best-product-list{
     display: flex;
+    position: relative;
+}
+.best-num-text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	width: 35px; height: 35px;
+	background-color: #006633;
+	font-weight: 900;
+	font-size: 25px;
+	border-radius: 3px;
+	opacity: 0.5;
+	position: absolute;
 }
 
 .best-product{
@@ -87,6 +101,9 @@
     font-size: 12px;
     font-weight: 900;
     margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .product-score{
     height: 13px;
@@ -123,7 +140,7 @@
 
 /* --------------------------------------- */
 .all-products{
-    width: 1310px; height: 530px;
+    width: 1310px;
     margin: 0 auto;
 }
 .all-product-text{
