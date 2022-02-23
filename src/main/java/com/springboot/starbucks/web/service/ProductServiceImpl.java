@@ -141,7 +141,6 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public int productOrderUpload(int product_code, PrincipalDetails principalDetails) {
 		ProductOrderRespDto productOrderRespDto = productRepository.getProductInfoByProductCode(product_code).toProductOrderEntity();
-		System.out.println(productOrderRespDto);
 		productOrderRespDto.setOrder_charge("결제완료");
 		productOrderRespDto.setUser_id(principalDetails.getUser().getId());
 		int result = productRepository.insertOrderProduct(productOrderRespDto);
