@@ -2,6 +2,7 @@ package com.springboot.starbucks.web.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.starbucks.config.auth.PrincipalDetails;
@@ -19,5 +20,11 @@ public class MypageController {
 	@PutMapping("/mypage/profile")
 	public String profileNameUpdate(MypageReqDto mypageReqDto,@AuthenticationPrincipal PrincipalDetails principalDetails) {
 		return Integer.toString(mypageService.updateMypageProfile(mypageReqDto,principalDetails));
+	}
+	
+	@PutMapping("/mypage/password")
+	public String passwordUpdate(@RequestBody MypageReqDto mypageReqDto,@AuthenticationPrincipal PrincipalDetails principalDetails) {
+		mypageService.updateMypagePassword(mypageReqDto, principalDetails);
+		return "1";
 	}
 }

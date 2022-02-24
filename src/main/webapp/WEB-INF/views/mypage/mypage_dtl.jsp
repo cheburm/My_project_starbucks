@@ -133,14 +133,15 @@
                         <p class="password-reference"><span>다른 아이디/사이트에서 사용한 적 없는 비밀번호</span></p>
                         <p class="password-reference"><span>이전에 사용한 적 없는 비밀번호</span>가 안전합니다.</p>
                         <div class="password-modify-ip">
-                            <input type="password" class="password-old password-ip" name="password_old"
+                            <input type="text" class="password-old password-ip" name="password_old"
                                 placeholder="현재 비밀번호">
                             <input type="password" class="password-new password-ip" name="password_new"
                                 placeholder="새 비밀번호">
                             <input type="password" class="repassword-new password-ip" placeholder="새 비밀번호 확인">
                         </div>
+                                <label class="password-ip-msg"></label>
                         <div class="password-modify-btn-box">
-                            <button type="submit" class="mypage-form-btn password-form-btn">확인</button>
+                            <button type="button" class="mypage-form-btn password-form-btn">확인</button>
                             <button type="button" class="mypage-cancle-btn password-cancle-btn">취소</button>
                         </div>
                     </div>

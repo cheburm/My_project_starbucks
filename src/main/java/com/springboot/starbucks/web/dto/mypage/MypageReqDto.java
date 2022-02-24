@@ -19,6 +19,9 @@ public class MypageReqDto {
 	private String name;
 	private MultipartFile profile_img;
 	
+	private String password_old;
+	private String password_new;
+	
 	public User toMypageEntity() {
 		return User.builder()
 				.id(user_id)

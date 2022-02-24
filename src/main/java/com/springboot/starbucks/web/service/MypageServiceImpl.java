@@ -51,4 +51,11 @@ public class MypageServiceImpl implements MypageService {
 		return result;
 	}
 
+	@Override
+	public int updateMypagePassword(MypageReqDto mypageReqDto, PrincipalDetails principalDetails) {
+		System.out.println(principalDetails.getUser().getPassword());
+		
+		return 0;
+	}
+
 }

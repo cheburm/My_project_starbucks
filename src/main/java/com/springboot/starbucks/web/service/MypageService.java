@@ -8,5 +8,6 @@ import com.springboot.starbucks.web.dto.mypage.MypageReqDto;
 public interface MypageService {
 	
 	public int updateMypageProfile(MypageReqDto mypageReqDto,@AuthenticationPrincipal PrincipalDetails principalDetails);
+	public int updateMypagePassword(MypageReqDto mypageReqDto,@AuthenticationPrincipal PrincipalDetails principalDetails);
 
 }
