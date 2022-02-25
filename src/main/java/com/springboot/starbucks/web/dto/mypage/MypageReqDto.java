@@ -1,5 +1,6 @@
 package com.springboot.starbucks.web.dto.mypage;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.springboot.starbucks.domain.user.User;
@@ -22,10 +23,11 @@ public class MypageReqDto {
 	private String password_old;
 	private String password_new;
 	
-	public User toMypageEntity() {
+	public User toMypageEntity(int id) {
 		return User.builder()
-				.id(user_id)
+				.id(id)
 				.name(name)
+				.password(new BCryptPasswordEncoder().encode(password_new))
 				.build();
 	}
 }

@@ -100,9 +100,12 @@ function passwordupdate() {
 				dataType: "text",
 				success: function(data) {
 					if (data == '1') {
-						
+						alert('새 비밀번호가 수정되었습니다.');
+						alert('재로그인 하세요');
+						location.href = '/logout';
 					} else {
 						alert('현재 비밀번호가 맞지않습니다.');
+						passwordIp[0].value = ''
 					}
 				},
 				error: function() {
@@ -129,6 +132,11 @@ passwordIp[1].onkeyup = () => {
 		passwordIp[1].style.border = '1px solid #c5c5c5';
 		passwordIp[2].style.border = '1px solid #c5c5c5';
 		passwordFlag = false;
+		finalPasswordFlag = false;
+	} else if (passwordIp[1].value != passwordIp[2].value || passwordIp[1].value.length != 0 && !/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/.test(passwordIp[1].value)) {
+		passwordIp[1].style.border = '1px solid #c5c5c5';
+		passwordIp[2].style.border = '1px solid #c5c5c5';
+		passwordFlag = true;
 		finalPasswordFlag = false;
 	} else if (passwordIp[1].value == passwordIp[2].value) {
 		passwordIp[1].style.border = '1px solid #006633';

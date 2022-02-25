@@ -133,7 +133,7 @@
                         <p class="password-reference"><span>다른 아이디/사이트에서 사용한 적 없는 비밀번호</span></p>
                         <p class="password-reference"><span>이전에 사용한 적 없는 비밀번호</span>가 안전합니다.</p>
                         <div class="password-modify-ip">
-                            <input type="text" class="password-old password-ip" name="password_old"
+                            <input type="password" class="password-old password-ip" name="password_old"
                                 placeholder="현재 비밀번호">
                             <input type="password" class="password-new password-ip" name="password_new"
                                 placeholder="새 비밀번호">

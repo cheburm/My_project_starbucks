@@ -24,7 +24,7 @@ public class MypageController {
 	
 	@PutMapping("/mypage/password")
 	public String passwordUpdate(@RequestBody MypageReqDto mypageReqDto,@AuthenticationPrincipal PrincipalDetails principalDetails) {
-		mypageService.updateMypagePassword(mypageReqDto, principalDetails);
-		return "1";
+		int result = mypageService.updateMypagePassword(mypageReqDto, principalDetails);
+		return Integer.toString(result);
 	}
 }

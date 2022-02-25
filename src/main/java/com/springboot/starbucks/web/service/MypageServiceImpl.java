@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.springboot.starbucks.config.auth.PrincipalDetails;
@@ -40,9 +42,9 @@ public class MypageServiceImpl implements MypageService {
 
 		try {
 			mypageReqDto.getProfile_img().transferTo(file); // 파일을 복붙느낌
-			User userEntity = mypageReqDto.toMypageEntity();
+			User userEntity = mypageReqDto.toMypageEntity(principalDetails.getUser().getId());
 			userEntity.setProfile_img(tempfilename);
-			result = mypageRepository.insertProfileName(userEntity);
+			result = mypageRepository.updateProfileName(userEntity);
 			principalDetails.getUser().setProfile_img(userEntity.getProfile_img());
 			principalDetails.getUser().setName(userEntity.getName());
 		} catch (IllegalStateException | IOException e) {
@@ -50,12 +52,24 @@ public class MypageServiceImpl implements MypageService {
 		}
 		return result;
 	}
+	
+	public boolean passwordCheck(String principalPassword, String password) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		return encoder.matches(password, principalPassword);// 매개변수 순서: 암호화되지 않은 값, 기존의 암호화된 값
+	}
 
 	@Override
 	public int updateMypagePassword(MypageReqDto mypageReqDto, PrincipalDetails principalDetails) {
-		System.out.println(principalDetails.getUser().getPassword());
+		int result = 0;
+		boolean passwordMathces = passwordCheck(principalDetails.getPassword(), mypageReqDto.getPassword_old());
 		
-		return 0;
+		if (passwordMathces) {
+			User userEntity = mypageReqDto.toMypageEntity(principalDetails.getUser().getId());
+			result = mypageRepository.updatePassword(userEntity);
+			principalDetails.getUser().setPassword(userEntity.getPassword());
+		}
+		
+		return result;
 	}
 
 }
